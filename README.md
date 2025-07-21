@@ -92,3 +92,20 @@ to filter and sort tasks.
   email: String,
   password: String // hashed
 }
+
+---
+
+## 📦 Setup Instructions
+
+### 🔧 Prerequisites
+
+- Node.js & npm
+- MongoDB (Local or MongoDB Atlas)
+
+---
+
+### 📥 Clone the Repository
+
+```bash
+git clone https://github.com/your-username/fullstack-todo-app.git
+cd fullstack-todo-app
