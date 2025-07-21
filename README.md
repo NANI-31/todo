@@ -92,20 +92,55 @@ to filter and sort tasks.
   email: String,
   password: String // hashed
 }
-
+```
 ---
-
+### 📝 Task
+```js
+{
+  userId: mongoose.Schema.Types.ObjectId, // linked to user
+  title: String,
+  description: String,
+  isCompleted: Boolean,
+  priority: { type: String, enum: ["low", "medium", "high"] },
+  dueDate: Date,
+  tags: [String],
+  reminderTime: Date,
+  createdAt: { type: Date, default: Date.now }
+}
+```
 ## 📦 Setup Instructions
 
 ### 🔧 Prerequisites
 
 - Node.js & npm
 - MongoDB (Local or MongoDB Atlas)
-
----
-
 ### 📥 Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/fullstack-todo-app.git
 cd fullstack-todo-app
+```
+---
+# Future Improvements
+
+## Planned Features
+
+🔔Push notifications for reminders
+ - Enable users to receive timely reminders through push notifications.
+
+**📊Task history/logging**  
+ - Maintain a log of completed and modified tasks for better tracking.
+
+👥Team-based task collaboration 
+ - Allow multiple users to collaborate on tasks and projects within a team.
+
+📱Offline support with PWA
+ - Implement Progressive Web App capabilities for offline functionality and improved user experience.
+
+---
+# 📸 Screenshots
+---
+# 💬 Feedback
+
+Got feedback or want to contribute? Open an issue or submit a PR!  
+✨ Happy Coding!
