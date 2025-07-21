@@ -1,0 +1,245 @@
+Color	        Hex	Description	    Suggested Use
+1️⃣ #a7ebf2	Light cyan	        Very light & soft	Backgrounds, highlights
+2️⃣ #54acbf	Soft teal	        Calm, friendly	Secondary buttons, UI elements
+3️⃣ #26658c	Blue-gray	        Solid, professional	Primary buttons, links
+4️⃣ #023859	Dark blue	        Deep, serious	Navigation bars, emphasis
+5️⃣ #011c40	Near-black navy	    Very dark, strong contrast	Text, headers on light bgs
+
+🔢 Priority Order (General UI Design Use):
+#26658c – ✅ Primary color (buttons, links, headers)
+#54acbf – ✅ Secondary color (badges, icons, highlights)
+#011c40 – ✅ Text & high contrast elements
+#a7ebf2 – ✅ Background or cards (light, calming)
+#023859 – ✅ Navigation or dark UI sections
+
+Example Roles in a Web App:
+Background: #a7ebf2
+Primary Button: #26658c
+Secondary Button: #54acbf
+Navbar/Header: #023859
+Text (on light bg): #011c40
+
+pink
+Matching Gradient
+#ff00a9
+#b155eb
+#007aff
+#0088f6
+#0088bc
+#008170
+Skip Gradient
+#ff00a9
+#6beeff
+#00b6ff 
+#0082c9
+Skip Shade Gradient
+#ff00a9 
+#d97fff 
+#96beff 
+#6beeff
+blue
+Generic Gradient
+#1a5ecd
+#b857c2
+#ff5f9d
+#ff8875
+#ffc15c
+#f9f871
+
+Gradient--rose: #f72585ff;
+--fandango: #b5179eff;
+--grape: #7209b7ff;
+--chrysler-blue: #560badff;
+--dark-blue: #480ca8ff;
+--zaffre: #3a0ca3ff;
+--palatinate-blue: #3f37c9ff;
+--neon-blue: #4361eeff;
+--chefchaouen-blue: #4895efff;
+--vivid-sky-blue: #4cc9f0ff;
+
+--prussian-blue: #012a4aff;
+--indigo-dye: #013a63ff;
+--indigo-dye-2: #01497cff;
+--indigo-dye-3: #014f86ff;
+--ucla-blue: #2a6f97ff;
+--cerulean: #2c7da0ff;
+--air-force-blue: #468fafff;
+--air-superiority-blue: #61a5c2ff;
+--sky-blue: #89c2d9ff;
+--light-blue: #a9d6e5ff;
+
+cold
+--blue: #2d00f7ff;
+--electric-indigo: #6a00f4ff;
+--violet: #8900f2ff;
+--veronica: #a100f2ff;
+--veronica-2: #b100e8ff;
+--electric-purple: #bc00ddff;
+--steel-pink: #d100d1ff;
+--steel-pink-2: #db00b6ff;
+--hollywood-cerise: #e500a4ff;
+--magenta: #f20089ff;
+
+--blue: #2d00f7ff;
+--electric-indigo: #6a00f4ff;
+--violet: #8900f2ff;
+--veronica: #a100f2ff;
+--veronica-2: #b100e8ff;
+--electric-purple: #bc00ddff;
+--steel-pink: #d100d1ff;
+--steel-pink-2: #db00b6ff;
+--hollywood-cerise: #e500a4ff;
+--magenta: #f20089ff;
+
+--picton-blue: #00a6fbff;
+--steel-blue: #0582caff;
+--lapis-lazuli: #006494ff;
+--prussian-blue: #003554ff;
+--rich-black: #051923ff;
+
+--white: #ffffffff;
+--rich-black: #00171fff;
+--prussian-blue: #003459ff;
+--cerulean: #007ea7ff;
+--picton-blue: #00a8e8ff;
+
+dark:
+--black: #02010aff;
+--oxford-blue: #04052eff;
+--federal-blue: #140152ff;
+--navy-blue: #22007cff;
+{ 'black': { DEFAULT: '#02010a', 100: '#000002', 200: '#010004', 300: '#010106', 400: '#020107', 500: '#02010a', 600: '#140a64', 700: '#2713bf', 800: '#5c49ed', 900: '#aea4f6' }, 'oxford_blue': { DEFAULT: '#04052e', 100: '#010109', 200: '#020213', 300: '#02031c', 400: '#030426', 500: '#04052e', 600: '#0b0d83', 700: '#1316d8', 800: '#5659f0', 900: '#abacf8' }, 'federal_blue': { DEFAULT: '#140152', 100: '#040010', 200: '#080020', 300: '#0c0030', 400: '#100141', 500: '#140152', 600: '#2802a6', 700: '#3c03fa', 800: '#7d55fd', 900: '#beaafe' }, 'navy_blue': { DEFAULT: '#22007c', 100: '#070018', 200: '#0d0031', 300: '#140049', 400: '#1a0062', 500: '#22007c', 600: '#3500c8', 700: '#5416ff', 800: '#8d64ff', 900: '#c6b1ff' } }
+
+2
+--oxford-blue: #00132dff;
+--oxford-blue-2: #00193bff;
+--oxford-blue-3: #001e45ff;
+--oxford-blue-4: #002657ff;
+--berkeley-blue: #002d67ff;
+--yale-blue: #00377eff;
+{ 'oxford_blue': { DEFAULT: '#00132d', 100: '#000409', 200: '#000812', 300: '#000b1c', 400: '#000f25', 500: '#00132d', 600: '#003a8b', 700: '#0060e8', 800: '#4593ff', 900: '#a2c9ff' }, 'oxford_blue': { DEFAULT: '#00193b', 100: '#00050c', 200: '#000a18', 300: '#000f25', 400: '#001431', 500: '#00193b', 600: '#003f97', 700: '#0064f1', 800: '#4b96ff', 900: '#a5cbff' }, 'oxford_blue': { DEFAULT: '#001e45', 100: '#00060e', 200: '#000c1d', 300: '#00132b', 400: '#001939', 500: '#001e45', 600: '#00459f', 700: '#006bf7', 800: '#509cff', 900: '#a7cdff' }, 'oxford_blue': { DEFAULT: '#002657', 100: '#000811', 200: '#000f23', 300: '#001734', 400: '#001e45', 500: '#002657', 600: '#004aab', 700: '#016fff', 800: '#569fff', 900: '#aacfff' }, 'berkeley_blue': { DEFAULT: '#002d67', 100: '#000914', 200: '#001229', 300: '#001b3d', 400: '#002352', 500: '#002d67', 600: '#0050b8', 700: '#0a74ff', 800: '#5ca3ff', 900: '#add1ff' }, 'yale_blue': { DEFAULT: '#00377e', 100: '#000b1a', 200: '#001633', 300: '#00214d', 400: '#002c66', 500: '#00377e', 600: '#0058cc', 700: '#1a7dff', 800: '#66a8ff', 900: '#b3d4ff' } }
+
+for blue
+--oxford-blue: #00132dff;
+--oxford-blue-2: #00193bff;
+--oxford-blue-3: #001e45ff;
+--oxford-blue-4: #002657ff;
+--berkeley-blue: #002d67ff;
+--yale-blue: #00377eff;
+{ 'oxford_blue': { DEFAULT: '#00132d', 100: '#000409', 200: '#000812', 300: '#000b1c', 400: '#000f25', 500: '#00132d', 600: '#003a8b', 700: '#0060e8', 800: '#4593ff', 900: '#a2c9ff' }, 'oxford_blue': { DEFAULT: '#00193b', 100: '#00050c', 200: '#000a18', 300: '#000f25', 400: '#001431', 500: '#00193b', 600: '#003f97', 700: '#0064f1', 800: '#4b96ff', 900: '#a5cbff' }, 'oxford_blue': { DEFAULT: '#001e45', 100: '#00060e', 200: '#000c1d', 300: '#00132b', 400: '#001939', 500: '#001e45', 600: '#00459f', 700: '#006bf7', 800: '#509cff', 900: '#a7cdff' }, 'oxford_blue': { DEFAULT: '#002657', 100: '#000811', 200: '#000f23', 300: '#001734', 400: '#001e45', 500: '#002657', 600: '#004aab', 700: '#016fff', 800: '#569fff', 900: '#aacfff' }, 'berkeley_blue': { DEFAULT: '#002d67', 100: '#000914', 200: '#001229', 300: '#001b3d', 400: '#002352', 500: '#002d67', 600: '#0050b8', 700: '#0a74ff', 800: '#5ca3ff', 900: '#add1ff' }, 'yale_blue': { DEFAULT: '#00377e', 100: '#000b1a', 200: '#001633', 300: '#00214d', 400: '#002c66', 500: '#00377e', 600: '#0058cc', 700: '#1a7dff', 800: '#66a8ff', 900: '#b3d4ff' } }
+
+gold
+--safety-orange: #ff7b00ff;
+--dark-orange-web: #ff8800ff;
+--princeton-orange: #ff9500ff;
+--orange-peel: #ffa200ff;
+--orange-web: #ffaa00ff;
+--selective-yellow: #ffb700ff;
+--mikado-yellow: #ffc300ff;
+--jonquil: #ffd000ff;
+--school-bus-yellow: #ffdd00ff;
+--canary: #ffea00ff;
+
+--naples-yellow: #ffe169ff;
+--mustard: #fad643ff;
+--saffron: #edc531ff;
+--gold-metallic: #dbb42cff;
+--satin-sheen-gold: #c9a227ff;
+--dark-goldenrod: #b69121ff;
+--dark-goldenrod-2: #a47e1bff;
+--golden-brown: #926c15ff;
+--field-drab: #805b10ff;
+--field-drab-2: #76520eff;
+
+--icterine: #fff75eff;
+--maize: #fff056ff;
+--maize-2: #ffe94eff;
+--mustard: #ffe246ff;
+--mustard-2: #ffda3dff;
+--mustard-3: #ffd53eff;
+--sunglow: #fecf3eff;
+--mikado-yellow: #fdc43fff;
+--selective-yellow: #fdbe39ff;
+--xanthous: #fdb833ff;
+
+--canary: #fff200ff;
+--canary-2: #ffe600ff;
+--school-bus-yellow: #ffd900ff;
+--jonquil: #ffcc00ff;
+--amber: #ffbf00ff;
+--selective-yellow: #ffb300ff;
+--orange-web: #ffa600ff;
+--orange-peel: #ff9900ff;
+--dark-orange-web: #ff8c00ff;
+--orange-wheel: #ff8000ff;
+
+--icterine: #fff75eff;
+--maize: #ffe94eff;
+--mustard: #ffda3dff;
+--mikado-yellow: #fdc43fff;
+--xanthous: #fdb833ff;
+
+--safety-orange: #ff7b00ff;
+--dark-orange-web: #ff8800ff;
+--princeton-orange: #ff9500ff;
+--orange-peel: #ffa200ff;
+--orange-web: #ffaa00ff;
+--selective-yellow: #ffb700ff;
+--mikado-yellow: #ffc300ff;
+--jonquil: #ffd000ff;
+--school-bus-yellow: #ffd933ff;
+--naples-yellow: #ffe15cff;
+
+--orange-web: #ffaa00ff;
+--selective-yellow: #ffb700ff;
+--mikado-yellow: #ffc300ff;
+--jonquil: #ffd000ff;
+--school-bus-yellow: #ffdd00ff;
+
+--icterine: #edea54ff;
+--maize: #ebdd4eff;
+--naples-yellow: #e9d048ff;
+--saffron: #e7c343ff;
+--xanthous: #e5b63dff;
+--hunyadi-yellow: #e2a837ff;
+--harvest-gold: #e09b31ff;
+--butterscotch: #de8e2cff;
+--bronze: #dc8126ff;
+--ochre: #da7420ff;
+
+--icterine: #fff75eff;
+--maize: #fff056ff;
+--maize-2: #ffe94eff;
+--mustard: #ffe246ff;
+--mustard-2: #ffda3dff;
+--mustard-3: #ffd53eff;
+--sunglow: #fecf3eff;
+--mikado-yellow: #fdc43fff;
+--selective-yellow: #fdbe39ff;
+--xanthous: #fdb833ff;
+
+--icterine: #fff75eff;
+--maize: #ffe94eff;
+--mustard: #ffda3dff;
+--mikado-yellow: #fdc43fff;
+--xanthous: #fdb833ff;
+
+--icterine: #fff75eff;
+--maize: #fff056ff;
+--maize-2: #ffe94eff;
+--mustard: #ffe246ff;
+--mustard-2: #ffda3dff;
+--mustard-3: #ffd53eff;
+--sunglow: #fecf3eff;
+--mikado-yellow: #fdc43fff;
+--selective-yellow: #fdbe39ff;
+--xanthous: #fdb833ff;
+background: hsla(173, 89%, 70%, 1);
+background: linear-gradient(90deg, hsla(173, 89%, 70%, 1) 0%, hsla(196, 68%, 38%, 1) 100%);
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#6FF7E8", endColorstr="#1F7EA1", GradientType=1 );
+background: hsla(197, 100%, 63%, 1);
+background: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#40C9FF", endColorstr="#E81CFF", GradientType=1 );
+background: hsla(33, 100%, 53%, 1);
+background: linear-gradient(90deg, hsla(33, 100%, 53%, 1) 0%, hsla(58, 100%, 68%, 1) 100%);
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FF930F", endColorstr="#FFF95B", GradientType=1 );

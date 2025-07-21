@@ -1,0 +1,270 @@
+- Tailwind
+
+{ 'vivid_sky_blue': { DEFAULT: '#40C9FF', 100: '#002e40', 200: '#005c81', 300: '#008ac1', 400: '#02b7ff', 500: '#40c9ff', 600: '#68d4ff', 700: '#8edfff', 800: '#b4eaff', 900: '#d9f4ff' }, 'deep_sky_blue': { DEFAULT: '#46C3FF', 100: '#002d41', 200: '#005983', 300: '#0086c4', 400: '#06b0ff', 500: '#46c3ff', 600: '#6cd0ff', 700: '#91dcff', 800: '#b6e8ff', 900: '#daf3ff' }, 'maya_blue': { DEFAULT: '#4CBDFF', 100: '#002a42', 200: '#005485', 300: '#007ec7', 400: '#0aa5ff', 500: '#4cbdff', 600: '#70cbff', 700: '#94d8ff', 800: '#b8e5ff', 900: '#dbf2ff' }, 'argentinian_blue': { DEFAULT: '#51B7FF', 100: '#002743', 200: '#004f87', 300: '#0076ca', 400: '#0e9bff', 500: '#51b7ff', 600: '#74c5ff', 700: '#97d4ff', 800: '#bae2ff', 900: '#dcf1ff' }, 'argentinian_blue': { DEFAULT: '#57B1FF', 100: '#002444', 200: '#004989', 300: '#006dcd', 400: '#1291ff', 500: '#57b1ff', 600: '#78c0ff', 700: '#9ad0ff', 800: '#bce0ff', 900: '#ddefff' }, 'ruddy_blue': { DEFAULT: '#5DABFF', 100: '#002245', 200: '#00438b', 300: '#0065d0', 400: '#1687ff', 500: '#5dabff', 600: '#7cbcff', 700: '#9dccff', 800: '#beddff', 900: '#deeeff' }, 'ruddy_blue': { DEFAULT: '#63A5FF', 100: '#001d46', 200: '#003b8d', 300: '#0058d3', 400: '#1b7aff', 500: '#63a5ff', 600: '#81b5ff', 700: '#a0c8ff', 800: '#c0daff', 900: '#dfedff' }, 'cornflower_blue': { DEFAULT: '#699FFF', 100: '#001b48', 200: '#003591', 300: '#0050d9', 400: '#2373ff', 500: '#699fff', 600: '#89b4ff', 700: '#a6c7ff', 800: '#c4daff', 900: '#e1ecff' }, 'cornflower_blue': { DEFAULT: '#6E99FF', 100: '#001649', 200: '#002c93', 300: '#0042dc', 400: '#2768ff', 500: '#6e99ff', 600: '#8dafff', 700: '#a9c3ff', 800: '#c6d7ff', 900: '#e2ebff' }, 'cornflower_blue': { DEFAULT: '#7493FF', 100: '#00104a', 200: '#002095', 300: '#0030df', 400: '#2b59ff', 500: '#7493ff', 600: '#91a9ff', 700: '#acbeff', 800: '#c8d4ff', 900: '#e3e9ff' }, 'cornflower_blue': { DEFAULT: '#7A8DFF', 100: '#000b4b', 200: '#001797', 300: '#0022e2', 400: '#2f4eff', 500: '#7a8dff', 600: '#95a5ff', 700: '#afbbff', 800: '#cad2ff', 900: '#e4e8ff' }, 'tropical_indigo': { DEFAULT: '#8087FF', 100: '#00044d', 200: '#000899', 300: '#000be6', 400: '#333dff', 500: '#8087ff', 600: '#999eff', 700: '#b3b6ff', 800: '#cccfff', 900: '#e5e7ff' }, 'tropical_indigo': { DEFAULT: '#8681FF', 100: '#03004d', 200: '#050099', 300: '#0800e6', 400: '#3a33ff', 500: '#8681ff', 600: '#9c99ff', 700: '#b5b3ff', 800: '#ceccff', 900: '#e6e5ff' }, 'tropical_indigo': { DEFAULT: '#8B7BFF', 100: '#09004b', 200: '#120097', 300: '#1a00e2', 400: '#472fff', 500: '#8b7bff', 600: '#a195ff', 700: '#b9afff', 800: '#d0caff', 900: '#e8e4ff' }, 'tropical_indigo': { DEFAULT: '#9175FF', 100: '#0f004a', 200: '#1e0095', 300: '#2d00df', 400: '#552bff', 500: '#9175ff', 600: '#a791ff', 700: '#bdacff', 800: '#d3c8ff', 900: '#e9e3ff' }, 'medium_slate_blue': { DEFAULT: '#9770FF', 100: '#140049', 200: '#270093', 300: '#3b00dc', 400: '#6027ff', 500: '#9770ff', 600: '#ab8dff', 700: '#c0a9ff', 800: '#d5c6ff', 900: '#eae2ff' }, 'medium_slate_blue': { DEFAULT: '#9D6AFF', 100: '#190048', 200: '#330091', 300: '#4c00d9', 400: '#7023ff', 500: '#9d6aff', 600: '#b289ff', 700: '#c5a6ff', 800: '#d9c4ff', 900: '#ece1ff' }, 'medium_slate_blue': { DEFAULT: '#A264FF', 100: '#1d0047', 200: '#39008f', 300: '#5600d6', 400: '#781fff', 500: '#a264ff', 600: '#b685ff', 700: '#c8a3ff', 800: '#dac2ff', 900: '#ede0ff' }, 'amethyst': { DEFAULT: '#A85EFF', 100: '#200045', 200: '#41008b', 300: '#6100d0', 400: '#8316ff', 500: '#a85eff', 600: '#b97cff', 700: '#cb9dff', 800: '#dcbeff', 900: '#eedeff' }, 'amethyst': { DEFAULT: '#AE58FF', 100: '#230044', 200: '#470089', 300: '#6a00cd', 400: '#8d12ff', 500: '#ae58ff', 600: '#be78ff', 700: '#ce9aff', 800: '#debcff', 900: '#efddff' }, 'electric_purple': { DEFAULT: '#B452FF', 100: '#260043', 200: '#4c0087', 300: '#7200ca', 400: '#970eff', 500: '#b452ff', 600: '#c374ff', 700: '#d297ff', 800: '#e1baff', 900: '#f0dcff' }, 'phlox': { DEFAULT: '#BA4CFF', 100: '#290042', 200: '#520085', 300: '#7b00c7', 400: '#a10aff', 500: '#ba4cff', 600: '#c870ff', 700: '#d694ff', 800: '#e4b8ff', 900: '#f1dbff' }, 'phlox': { DEFAULT: '#BF46FF', 100: '#2a0041', 200: '#550083', 300: '#7f00c4', 400: '#a806ff', 500: '#bf46ff', 600: '#cc6cff', 700: '#d891ff', 800: '#e5b6ff', 900: '#f2daff' }, 'phlox': { DEFAULT: '#C540FF', 100: '#2d0040', 200: '#5a0081', 300: '#8700c1', 400: '#b302ff', 500: '#c540ff', 600: '#d268ff', 700: '#dd8eff', 800: '#e8b4ff', 900: '#f4d9ff' }, 'phlox': { DEFAULT: '#CB3AFF', 100: '#2e003e', 200: '#5b007c', 300: '#8900bb', 400: '#b700f9', 500: '#cb3aff', 600: '#d560ff', 700: '#df88ff', 800: '#eaafff', 900: '#f4d7ff' }, 'phlox': { DEFAULT: '#D134FF', 100: '#2f003d', 200: '#5e007a', 300: '#8d00b8', 400: '#bc00f5', 500: '#d134ff', 600: '#d95cff', 700: '#e285ff', 800: '#ecadff', 900: '#f5d6ff' }, 'phlox': { DEFAULT: '#D72EFF', 100: '#31003c', 200: '#620078', 300: '#9300b5', 400: '#c500f1', 500: '#d72eff', 600: '#e058ff', 700: '#e882ff', 800: '#f0abff', 900: '#f7d5ff' }, 'phlox': { DEFAULT: '#DC28FF', 100: '#31003b', 200: '#630076', 300: '#9400b1', 400: '#c500ed', 500: '#dc28ff', 600: '#e254ff', 700: '#ea7eff', 800: '#f1a9ff', 900: '#f8d4ff' }, 'phlox': { DEFAULT: '#E222FF', 100: '#32003a', 200: '#650074', 300: '#9700ae', 400: '#ca00e9', 500: '#e222ff', 600: '#e850ff', 700: '#ed7bff', 800: '#f3a7ff', 900: '#f9d3ff' }, 'phlox': { DEFAULT: '#E81CFF', 100: '#320038', 200: '#650070', 300: '#9700a8', 400: '#ca00e0', 500: '#e81cff', 600: '#ed47ff', 700: '#f175ff', 800: '#f6a3ff', 900: '#fad1ff' } }
+
+- CSV
+
+40C9FF,46C3FF,4CBDFF,51B7FF,57B1FF,5DABFF,63A5FF,699FFF,6E99FF,7493FF,7A8DFF,8087FF,8681FF,8B7BFF,9175FF,9770FF,9D6AFF,A264FF,A85EFF,AE58FF,B452FF,BA4CFF,BF46FF,C540FF,CB3AFF,D134FF,D72EFF,DC28FF,E222FF,E81CFF
+
+- With #
+
+#40C9FF, #46C3FF, #4CBDFF, #51B7FF, #57B1FF, #5DABFF, #63A5FF, #699FFF, #6E99FF, #7493FF, #7A8DFF, #8087FF, #8681FF, #8B7BFF, #9175FF, #9770FF, #9D6AFF, #A264FF, #A85EFF, #AE58FF, #B452FF, #BA4CFF, #BF46FF, #C540FF, #CB3AFF, #D134FF, #D72EFF, #DC28FF, #E222FF, #E81CFF
+
+- Array
+
+["40C9FF","46C3FF","4CBDFF","51B7FF","57B1FF","5DABFF","63A5FF","699FFF","6E99FF","7493FF","7A8DFF","8087FF","8681FF","8B7BFF","9175FF","9770FF","9D6AFF","A264FF","A85EFF","AE58FF","B452FF","BA4CFF","BF46FF","C540FF","CB3AFF","D134FF","D72EFF","DC28FF","E222FF","E81CFF"]
+
+- Object
+
+{"Vivid sky blue":"40C9FF","Deep Sky Blue":"46C3FF","Maya blue":"4CBDFF","Argentinian Blue":"51B7FF","Argentinian Blue 2":"57B1FF","Ruddy Blue":"5DABFF","Ruddy Blue 2":"63A5FF","Cornflower blue":"699FFF","Cornflower blue 2":"6E99FF","Cornflower blue 3":"7493FF","Cornflower blue 4":"7A8DFF","Tropical indigo":"8087FF","Tropical indigo 2":"8681FF","Tropical indigo 3":"8B7BFF","Tropical indigo 4":"9175FF","Medium slate blue":"9770FF","Medium slate blue 2":"9D6AFF","Medium slate blue 3":"A264FF","Amethyst":"A85EFF","Amethyst 2":"AE58FF","Electric purple":"B452FF","Phlox":"BA4CFF","Phlox 2":"BF46FF","Phlox 3":"C540FF","Phlox 4":"CB3AFF","Phlox 5":"D134FF","Phlox 6":"D72EFF","Phlox 7":"DC28FF","Phlox 8":"E222FF","Phlox 9":"E81CFF"}
+
+- Extended Array
+
+[{"name":"Vivid sky blue","hex":"40C9FF","rgb":[64,201,255],"cmyk":[75,21,0,0],"hsb":[197,75,100],"hsl":[197,100,63],"lab":[76,-19,-37]},{"name":"Deep Sky Blue","hex":"46C3FF","rgb":[70,195,255],"cmyk":[73,24,0,0],"hsb":[199,73,100],"hsl":[199,100,64],"lab":[75,-15,-39]},{"name":"Maya blue","hex":"4CBDFF","rgb":[76,189,255],"cmyk":[70,26,0,0],"hsb":[202,70,100],"hsl":[202,100,65],"lab":[73,-11,-42]},{"name":"Argentinian Blue","hex":"51B7FF","rgb":[81,183,255],"cmyk":[68,28,0,0],"hsb":[205,68,100],"hsl":[205,100,66],"lab":[71,-7,-44]},{"name":"Argentinian Blue","hex":"57B1FF","rgb":[87,177,255],"cmyk":[66,31,0,0],"hsb":[208,66,100],"hsl":[208,100,67],"lab":[70,-3,-47]},{"name":"Ruddy Blue","hex":"5DABFF","rgb":[93,171,255],"cmyk":[64,33,0,0],"hsb":[211,64,100],"hsl":[211,100,68],"lab":[69,1,-49]},{"name":"Ruddy Blue","hex":"63A5FF","rgb":[99,165,255],"cmyk":[61,35,0,0],"hsb":[215,61,100],"hsl":[215,100,69],"lab":[67,6,-51]},{"name":"Cornflower blue","hex":"699FFF","rgb":[105,159,255],"cmyk":[59,38,0,0],"hsb":[218,59,100],"hsl":[218,100,71],"lab":[66,10,-53]},{"name":"Cornflower blue","hex":"6E99FF","rgb":[110,153,255],"cmyk":[57,40,0,0],"hsb":[222,57,100],"hsl":[222,100,72],"lab":[64,15,-55]},{"name":"Cornflower blue","hex":"7493FF","rgb":[116,147,255],"cmyk":[55,42,0,0],"hsb":[227,55,100],"hsl":[227,100,73],"lab":[63,19,-57]},{"name":"Cornflower blue","hex":"7A8DFF","rgb":[122,141,255],"cmyk":[52,45,0,0],"hsb":[231,52,100],"hsl":[231,100,74],"lab":[62,24,-59]},{"name":"Tropical indigo","hex":"8087FF","rgb":[128,135,255],"cmyk":[50,47,0,0],"hsb":[237,50,100],"hsl":[237,100,75],"lab":[61,29,-61]},{"name":"Tropical indigo","hex":"8681FF","rgb":[134,129,255],"cmyk":[47,49,0,0],"hsb":[242,49,100],"hsl":[242,100,75],"lab":[60,34,-62]},{"name":"Tropical indigo","hex":"8B7BFF","rgb":[139,123,255],"cmyk":[45,52,0,0],"hsb":[247,52,100],"hsl":[247,100,74],"lab":[59,38,-64]},{"name":"Tropical indigo","hex":"9175FF","rgb":[145,117,255],"cmyk":[43,54,0,0],"hsb":[252,54,100],"hsl":[252,100,73],"lab":[58,43,-65]},{"name":"Medium slate blue","hex":"9770FF","rgb":[151,112,255],"cmyk":[41,56,0,0],"hsb":[256,56,100],"hsl":[256,100,72],"lab":[57,47,-66]},{"name":"Medium slate blue","hex":"9D6AFF","rgb":[157,106,255],"cmyk":[38,58,0,0],"hsb":[261,58,100],"hsl":[261,100,71],"lab":[57,52,-67]},{"name":"Medium slate blue","hex":"A264FF","rgb":[162,100,255],"cmyk":[36,61,0,0],"hsb":[264,61,100],"hsl":[264,100,70],"lab":[56,56,-68]},{"name":"Amethyst","hex":"A85EFF","rgb":[168,94,255],"cmyk":[34,63,0,0],"hsb":[268,63,100],"hsl":[268,100,68],"lab":[56,60,-69]},{"name":"Amethyst","hex":"AE58FF","rgb":[174,88,255],"cmyk":[32,65,0,0],"hsb":[271,65,100],"hsl":[271,100,67],"lab":[55,64,-70]},{"name":"Electric purple","hex":"B452FF","rgb":[180,82,255],"cmyk":[29,68,0,0],"hsb":[274,68,100],"hsl":[274,100,66],"lab":[55,68,-70]},{"name":"Phlox","hex":"BA4CFF","rgb":[186,76,255],"cmyk":[27,70,0,0],"hsb":[277,70,100],"hsl":[277,100,65],"lab":[55,72,-70]},{"name":"Phlox","hex":"BF46FF","rgb":[191,70,255],"cmyk":[25,73,0,0],"hsb":[279,73,100],"hsl":[279,100,64],"lab":[55,75,-70]},{"name":"Phlox","hex":"C540FF","rgb":[197,64,255],"cmyk":[23,75,0,0],"hsb":[282,75,100],"hsl":[282,100,63],"lab":[55,78,-70]},{"name":"Phlox","hex":"CB3AFF","rgb":[203,58,255],"cmyk":[20,77,0,0],"hsb":[284,77,100],"hsl":[284,100,61],"lab":[55,81,-70]},{"name":"Phlox","hex":"D134FF","rgb":[209,52,255],"cmyk":[18,80,0,0],"hsb":[286,80,100],"hsl":[286,100,60],"lab":[55,84,-69]},{"name":"Phlox","hex":"D72EFF","rgb":[215,46,255],"cmyk":[16,82,0,0],"hsb":[289,82,100],"hsl":[289,100,59],"lab":[56,86,-69]},{"name":"Phlox","hex":"DC28FF","rgb":[220,40,255],"cmyk":[14,84,0,0],"hsb":[290,84,100],"hsl":[290,100,58],"lab":[56,89,-68]},{"name":"Phlox","hex":"E222FF","rgb":[226,34,255],"cmyk":[11,87,0,0],"hsb":[292,87,100],"hsl":[292,100,57],"lab":[57,91,-67]},{"name":"Phlox","hex":"E81CFF","rgb":[232,28,255],"cmyk":[9,89,0,0],"hsb":[294,89,100],"hsl":[294,100,55],"lab":[57,92,-66]}]
+
+- XML
+
+<palette>
+  <color name="Vivid sky blue" hex="40C9FF" r="64" g="201" b="255" />
+  <color name="Deep Sky Blue" hex="46C3FF" r="70" g="195" b="255" />
+  <color name="Maya blue" hex="4CBDFF" r="76" g="189" b="255" />
+  <color name="Argentinian Blue" hex="51B7FF" r="81" g="183" b="255" />
+  <color name="Argentinian Blue" hex="57B1FF" r="87" g="177" b="255" />
+  <color name="Ruddy Blue" hex="5DABFF" r="93" g="171" b="255" />
+  <color name="Ruddy Blue" hex="63A5FF" r="99" g="165" b="255" />
+  <color name="Cornflower blue" hex="699FFF" r="105" g="159" b="255" />
+  <color name="Cornflower blue" hex="6E99FF" r="110" g="153" b="255" />
+  <color name="Cornflower blue" hex="7493FF" r="116" g="147" b="255" />
+  <color name="Cornflower blue" hex="7A8DFF" r="122" g="141" b="255" />
+  <color name="Tropical indigo" hex="8087FF" r="128" g="135" b="255" />
+  <color name="Tropical indigo" hex="8681FF" r="134" g="129" b="255" />
+  <color name="Tropical indigo" hex="8B7BFF" r="139" g="123" b="255" />
+  <color name="Tropical indigo" hex="9175FF" r="145" g="117" b="255" />
+  <color name="Medium slate blue" hex="9770FF" r="151" g="112" b="255" />
+  <color name="Medium slate blue" hex="9D6AFF" r="157" g="106" b="255" />
+  <color name="Medium slate blue" hex="A264FF" r="162" g="100" b="255" />
+  <color name="Amethyst" hex="A85EFF" r="168" g="94" b="255" />
+  <color name="Amethyst" hex="AE58FF" r="174" g="88" b="255" />
+  <color name="Electric purple" hex="B452FF" r="180" g="82" b="255" />
+  <color name="Phlox" hex="BA4CFF" r="186" g="76" b="255" />
+  <color name="Phlox" hex="BF46FF" r="191" g="70" b="255" />
+  <color name="Phlox" hex="C540FF" r="197" g="64" b="255" />
+  <color name="Phlox" hex="CB3AFF" r="203" g="58" b="255" />
+  <color name="Phlox" hex="D134FF" r="209" g="52" b="255" />
+  <color name="Phlox" hex="D72EFF" r="215" g="46" b="255" />
+  <color name="Phlox" hex="DC28FF" r="220" g="40" b="255" />
+  <color name="Phlox" hex="E222FF" r="226" g="34" b="255" />
+  <color name="Phlox" hex="E81CFF" r="232" g="28" b="255" />
+</palette>
+
+/* CSS HEX */
+--vivid-sky-blue: #40C9FFff;
+--deep-sky-blue: #46C3FFff;
+--maya-blue: #4CBDFFff;
+--argentinian-blue: #51B7FFff;
+--argentinian-blue-2: #57B1FFff;
+--ruddy-blue: #5DABFFff;
+--ruddy-blue-2: #63A5FFff;
+--cornflower-blue: #699FFFff;
+--cornflower-blue-2: #6E99FFff;
+--cornflower-blue-3: #7493FFff;
+--cornflower-blue-4: #7A8DFFff;
+--tropical-indigo: #8087FFff;
+--tropical-indigo-2: #8681FFff;
+--tropical-indigo-3: #8B7BFFff;
+--tropical-indigo-4: #9175FFff;
+--medium-slate-blue: #9770FFff;
+--medium-slate-blue-2: #9D6AFFff;
+--medium-slate-blue-3: #A264FFff;
+--amethyst: #A85EFFff;
+--amethyst-2: #AE58FFff;
+--electric-purple: #B452FFff;
+--phlox: #BA4CFFff;
+--phlox-2: #BF46FFff;
+--phlox-3: #C540FFff;
+--phlox-4: #CB3AFFff;
+--phlox-5: #D134FFff;
+--phlox-6: #D72EFFff;
+--phlox-7: #DC28FFff;
+--phlox-8: #E222FFff;
+--phlox-9: #E81CFFff;
+
+/* CSS HSL */
+--vivid-sky-blue: hsla(197, 100%, 63%, 1);
+--deep-sky-blue: hsla(199, 100%, 64%, 1);
+--maya-blue: hsla(202, 100%, 65%, 1);
+--argentinian-blue: hsla(205, 100%, 66%, 1);
+--argentinian-blue-2: hsla(208, 100%, 67%, 1);
+--ruddy-blue: hsla(211, 100%, 68%, 1);
+--ruddy-blue-2: hsla(215, 100%, 69%, 1);
+--cornflower-blue: hsla(218, 100%, 71%, 1);
+--cornflower-blue-2: hsla(222, 100%, 72%, 1);
+--cornflower-blue-3: hsla(227, 100%, 73%, 1);
+--cornflower-blue-4: hsla(231, 100%, 74%, 1);
+--tropical-indigo: hsla(237, 100%, 75%, 1);
+--tropical-indigo-2: hsla(242, 100%, 75%, 1);
+--tropical-indigo-3: hsla(247, 100%, 74%, 1);
+--tropical-indigo-4: hsla(252, 100%, 73%, 1);
+--medium-slate-blue: hsla(256, 100%, 72%, 1);
+--medium-slate-blue-2: hsla(261, 100%, 71%, 1);
+--medium-slate-blue-3: hsla(264, 100%, 70%, 1);
+--amethyst: hsla(268, 100%, 68%, 1);
+--amethyst-2: hsla(271, 100%, 67%, 1);
+--electric-purple: hsla(274, 100%, 66%, 1);
+--phlox: hsla(277, 100%, 65%, 1);
+--phlox-2: hsla(279, 100%, 64%, 1);
+--phlox-3: hsla(282, 100%, 63%, 1);
+--phlox-4: hsla(284, 100%, 61%, 1);
+--phlox-5: hsla(286, 100%, 60%, 1);
+--phlox-6: hsla(289, 100%, 59%, 1);
+--phlox-7: hsla(290, 100%, 58%, 1);
+--phlox-8: hsla(292, 100%, 57%, 1);
+--phlox-9: hsla(294, 100%, 55%, 1);
+
+
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #40C9FFff, #46C3FFff, #4CBDFFff, #51B7FFff, #57B1FFff, #5DABFFff, #63A5FFff, #699FFFff, #6E99FFff, #7493FFff, #7A8DFFff, #8087FFff, #8681FFff, #8B7BFFff, #9175FFff, #9770FFff, #9D6AFFff, #A264FFff, #A85EFFff, #AE58FFff, #B452FFff, #BA4CFFff, #BF46FFff, #C540FFff, #CB3AFFff, #D134FFff, #D72EFFff, #DC28FFff, #E222FFff, #E81CFFff);
+$gradient-right: linear-gradient(90deg, #40C9FFff, #46C3FFff, #4CBDFFff, #51B7FFff, #57B1FFff, #5DABFFff, #63A5FFff, #699FFFff, #6E99FFff, #7493FFff, #7A8DFFff, #8087FFff, #8681FFff, #8B7BFFff, #9175FFff, #9770FFff, #9D6AFFff, #A264FFff, #A85EFFff, #AE58FFff, #B452FFff, #BA4CFFff, #BF46FFff, #C540FFff, #CB3AFFff, #D134FFff, #D72EFFff, #DC28FFff, #E222FFff, #E81CFFff);
+$gradient-bottom: linear-gradient(180deg, #40C9FFff, #46C3FFff, #4CBDFFff, #51B7FFff, #57B1FFff, #5DABFFff, #63A5FFff, #699FFFff, #6E99FFff, #7493FFff, #7A8DFFff, #8087FFff, #8681FFff, #8B7BFFff, #9175FFff, #9770FFff, #9D6AFFff, #A264FFff, #A85EFFff, #AE58FFff, #B452FFff, #BA4CFFff, #BF46FFff, #C540FFff, #CB3AFFff, #D134FFff, #D72EFFff, #DC28FFff, #E222FFff, #E81CFFff);
+$gradient-left: linear-gradient(270deg, #40C9FFff, #46C3FFff, #4CBDFFff, #51B7FFff, #57B1FFff, #5DABFFff, #63A5FFff, #699FFFff, #6E99FFff, #7493FFff, #7A8DFFff, #8087FFff, #8681FFff, #8B7BFFff, #9175FFff, #9770FFff, #9D6AFFff, #A264FFff, #A85EFFff, #AE58FFff, #B452FFff, #BA4CFFff, #BF46FFff, #C540FFff, #CB3AFFff, #D134FFff, #D72EFFff, #DC28FFff, #E222FFff, #E81CFFff);
+$gradient-top-right: linear-gradient(45deg, #40C9FFff, #46C3FFff, #4CBDFFff, #51B7FFff, #57B1FFff, #5DABFFff, #63A5FFff, #699FFFff, #6E99FFff, #7493FFff, #7A8DFFff, #8087FFff, #8681FFff, #8B7BFFff, #9175FFff, #9770FFff, #9D6AFFff, #A264FFff, #A85EFFff, #AE58FFff, #B452FFff, #BA4CFFff, #BF46FFff, #C540FFff, #CB3AFFff, #D134FFff, #D72EFFff, #DC28FFff, #E222FFff, #E81CFFff);
+$gradient-bottom-right: linear-gradient(135deg, #40C9FFff, #46C3FFff, #4CBDFFff, #51B7FFff, #57B1FFff, #5DABFFff, #63A5FFff, #699FFFff, #6E99FFff, #7493FFff, #7A8DFFff, #8087FFff, #8681FFff, #8B7BFFff, #9175FFff, #9770FFff, #9D6AFFff, #A264FFff, #A85EFFff, #AE58FFff, #B452FFff, #BA4CFFff, #BF46FFff, #C540FFff, #CB3AFFff, #D134FFff, #D72EFFff, #DC28FFff, #E222FFff, #E81CFFff);
+$gradient-top-left: linear-gradient(225deg, #40C9FFff, #46C3FFff, #4CBDFFff, #51B7FFff, #57B1FFff, #5DABFFff, #63A5FFff, #699FFFff, #6E99FFff, #7493FFff, #7A8DFFff, #8087FFff, #8681FFff, #8B7BFFff, #9175FFff, #9770FFff, #9D6AFFff, #A264FFff, #A85EFFff, #AE58FFff, #B452FFff, #BA4CFFff, #BF46FFff, #C540FFff, #CB3AFFff, #D134FFff, #D72EFFff, #DC28FFff, #E222FFff, #E81CFFff);
+$gradient-bottom-left: linear-gradient(315deg, #40C9FFff, #46C3FFff, #4CBDFFff, #51B7FFff, #57B1FFff, #5DABFFff, #63A5FFff, #699FFFff, #6E99FFff, #7493FFff, #7A8DFFff, #8087FFff, #8681FFff, #8B7BFFff, #9175FFff, #9770FFff, #9D6AFFff, #A264FFff, #A85EFFff, #AE58FFff, #B452FFff, #BA4CFFff, #BF46FFff, #C540FFff, #CB3AFFff, #D134FFff, #D72EFFff, #DC28FFff, #E222FFff, #E81CFFff);
+$gradient-radial: radial-gradient(#40C9FFff, #46C3FFff, #4CBDFFff, #51B7FFff, #57B1FFff, #5DABFFff, #63A5FFff, #699FFFff, #6E99FFff, #7493FFff, #7A8DFFff, #8087FFff, #8681FFff, #8B7BFFff, #9175FFff, #9770FFff, #9D6AFFff, #A264FFff, #A85EFFff, #AE58FFff, #B452FFff, #BA4CFFff, #BF46FFff, #C540FFff, #CB3AFFff, #D134FFff, #D72EFFff, #DC28FFff, #E222FFff, #E81CFFff);
+
+- Tailwind
+
+{ 'royal_blue_(web_color)': { DEFAULT: '#6176E3', 100: '#0a1137', 200: '#14236f', 300: '#1d34a6', 400: '#2b48da', 500: '#6176e3', 600: '#8293e9', 700: '#a1aeee', 800: '#c1c9f4', 900: '#e0e4f9' }, 'royal_blue_(web_color)': { DEFAULT: '#6574E2', 100: '#0a1037', 200: '#151f6e', 300: '#1f2fa5', 400: '#2e42d7', 500: '#6574e2', 600: '#848fe7', 700: '#a2abed', 800: '#c1c7f3', 900: '#e0e3f9' }, 'medium_slate_blue': { DEFAULT: '#6972E1', 100: '#0b0e37', 200: '#161c6f', 300: '#212aa6', 400: '#333ed7', 500: '#6972e1', 600: '#888ee7', 700: '#a6aaed', 800: '#c3c7f3', 900: '#e1e3f9' }, 'medium_slate_blue': { DEFAULT: '#6E70E1', 100: '#0b0c38', 200: '#171870', 300: '#2225a8', 400: '#373ad6', 500: '#6e70e1', 600: '#8c8de7', 700: '#a9aaed', 800: '#c5c6f3', 900: '#e2e3f9' }, 'medium_slate_blue': { DEFAULT: '#726DE0', 100: '#0e0c37', 200: '#1c176d', 300: '#2923a4', 400: '#3d35d4', 500: '#726de0', 600: '#8e89e6', 700: '#aaa7ec', 800: '#c6c4f3', 900: '#e3e2f9' }, 'medium_slate_blue': { DEFAULT: '#766BDF', 100: '#100c36', 200: '#20186d', 300: '#3124a3', 400: '#4636d3', 500: '#766bdf', 600: '#938ae5', 700: '#aea7ec', 800: '#c9c4f2', 900: '#e4e2f9' }, 'medium_slate_blue': { DEFAULT: '#7A69DE', 100: '#120c36', 200: '#24186b', 300: '#3623a1', 400: '#4b33d2', 500: '#7a69de', 600: '#9587e5', 700: '#afa5eb', 800: '#cac3f2', 900: '#e4e1f8' }, 'medium_slate_blue': { DEFAULT: '#7E67DE', 100: '#140c36', 200: '#28186b', 300: '#3c23a1', 400: '#5333d2', 500: '#7e67de', 600: '#9987e5', 700: '#b3a5eb', 800: '#ccc3f2', 900: '#e6e1f8' }, 'medium_slate_blue': { DEFAULT: '#8265DD', 100: '#150c35', 200: '#2a1769', 300: '#3f239e', 400: '#5530d1', 500: '#8265dd', 600: '#9a83e4', 700: '#b3a2eb', 800: '#ccc1f1', 900: '#e6e0f8' }, 'medium_slate_blue': { DEFAULT: '#8763DC', 100: '#180c34', 200: '#301869', 300: '#48249d', 400: '#6131d0', 500: '#8763dc', 600: '#a084e3', 700: '#b8a3ea', 800: '#d0c1f1', 900: '#e7e0f8' }, 'amethyst': { DEFAULT: '#8B61DB', 100: '#1a0c34', 200: '#331767', 300: '#4d239b', 400: '#672fce', 500: '#8b61db', 600: '#a381e2', 700: '#baa0e9', 800: '#d1c0f1', 900: '#e8dff8' }, 'amethyst': { DEFAULT: '#8F5EDB', 100: '#1b0c33', 200: '#361765', 300: '#522398', 400: '#6d2ecb', 500: '#8f5edb', 600: '#a57de2', 700: '#bc9ee9', 800: '#d2bef0', 900: '#e9dff8' }, 'amethyst': { DEFAULT: '#935CDA', 100: '#1c0c33', 200: '#391765', 300: '#552398', 400: '#722ecb', 500: '#935cda', 600: '#a97de2', 700: '#be9ee9', 800: '#d4bef0', 900: '#e9dff8' }, 'amethyst': { DEFAULT: '#975AD9', 100: '#1e0b32', 200: '#3c1764', 300: '#5a2296', 400: '#782dc8', 500: '#975ad9', 600: '#ac7ae1', 700: '#c19be8', 800: '#d5bcf0', 900: '#eadef7' }, 'amethyst': { DEFAULT: '#9B58D8', 100: '#1f0c32', 200: '#3e1763', 300: '#5e2395', 400: '#7d2fc6', 500: '#9b58d8', 600: '#af7be0', 700: '#c39ce8', 800: '#d7bdef', 900: '#ebdef7' }, 'amethyst': { DEFAULT: '#A056D8', 100: '#210b31', 200: '#411662', 300: '#622193', 400: '#822dc4', 500: '#a056d8', 600: '#b277e0', 700: '#c699e8', 800: '#d9bbf0', 900: '#ecddf7' }, 'amethyst': { DEFAULT: '#A454D7', 100: '#220b31', 200: '#451761', 300: '#672292', 400: '#8a2ec3', 500: '#a454d7', 600: '#b778df', 700: '#c999e7', 800: '#dbbbef', 900: '#edddf7' }, 'amethyst': { DEFAULT: '#A852D6', 100: '#230b30', 200: '#461660', 300: '#692290', 400: '#8c2dc0', 500: '#a852d6', 600: '#b974de', 700: '#cb97e7', 800: '#dcbaef', 900: '#eedcf7' }, 'amethyst': { DEFAULT: '#AC50D5', 100: '#240b2f', 200: '#48175e', 300: '#6c228c', 400: '#912dbb', 500: '#ac50d5', 600: '#bd72dd', 700: '#cd95e5', 800: '#deb8ee', 900: '#eedcf6' }, 'steel_pink': { DEFAULT: '#B04DD5', 100: '#250b2f', 200: '#4b165e', 300: '#70218d', 400: '#962cbc', 500: '#b04dd5', 600: '#c171de', 700: '#d094e6', 800: '#e0b8ee', 900: '#efdbf7' }, 'steel_pink': { DEFAULT: '#B44BD4', 100: '#260b2e', 200: '#4c165c', 300: '#72218a', 400: '#972db8', 500: '#b44bd4', 600: '#c26edc', 700: '#d293e5', 800: '#e1b7ed', 900: '#f0dbf6' }, 'steel_pink': { DEFAULT: '#B949D3', 100: '#280b2e', 200: '#4f165c', 300: '#77218a', 400: '#9e2db8', 500: '#b949d3', 600: '#c86edc', 700: '#d693e5', 800: '#e3b7ed', 900: '#f1dbf6' }, 'steel_pink': { DEFAULT: '#BD47D2', 100: '#280b2d', 200: '#50165a', 300: '#782187', 400: '#a02cb5', 500: '#bd47d2', 600: '#ca6bdb', 700: '#d890e4', 800: '#e5b5ed', 900: '#f2daf6' }, 'steel_pink': { DEFAULT: '#C145D2', 100: '#290b2d', 200: '#52165a', 300: '#7c2187', 400: '#a52cb5', 500: '#c145d2', 600: '#ce6bdb', 700: '#da90e4', 800: '#e7b5ed', 900: '#f3daf6' }, 'steel_pink': { DEFAULT: '#C543D1', 100: '#2a0b2c', 200: '#531559', 300: '#7d2085', 400: '#a62bb1', 500: '#c543d1', 600: '#d168da', 700: '#dc8ee4', 800: '#e8b3ed', 900: '#f3d9f6' }, 'steel_pink': { DEFAULT: '#C941D0', 100: '#2a0b2c', 200: '#551658', 300: '#7f2184', 400: '#aa2cb0', 500: '#c941d0', 600: '#d469d9', 700: '#df8ee3', 800: '#e9b4ec', 900: '#f4d9f6' }, 'steel_pink': { DEFAULT: '#CD3ECF', 100: '#2b0b2b', 200: '#551656', 300: '#802082', 400: '#ab2bad', 500: '#cd3ecf', 600: '#d766d9', 700: '#e18ce2', 800: '#ebb2ec', 900: '#f5d9f5' }, 'steel_pink': { DEFAULT: '#D23CCF', 100: '#2c0a2b', 200: '#581556', 300: '#831f82', 400: '#af29ad', 500: '#d23ccf', 600: '#db64d9', 700: '#e48be2', 800: '#edb1ec', 900: '#f6d8f5' }, 'steel_pink': { DEFAULT: '#D63ACE', 100: '#2d092b', 200: '#5a1256', 300: '#871c81', 400: '#b325ac', 500: '#d63ace', 600: '#de60d8', 700: '#e788e2', 800: '#efafec', 900: '#f7d7f5' }, 'steel_pink': { DEFAULT: '#DA38CD', 100: '#2f092b', 200: '#5d1157', 300: '#8c1a82', 400: '#ba22ae', 500: '#da38cd', 600: '#e260d7', 700: '#e988e1', 800: '#f0b0eb', 900: '#f8d7f5' } }
+
+- CSV
+
+6176E3,6574E2,6972E1,6E70E1,726DE0,766BDF,7A69DE,7E67DE,8265DD,8763DC,8B61DB,8F5EDB,935CDA,975AD9,9B58D8,A056D8,A454D7,A852D6,AC50D5,B04DD5,B44BD4,B949D3,BD47D2,C145D2,C543D1,C941D0,CD3ECF,D23CCF,D63ACE,DA38CD
+
+- With #
+
+#6176E3, #6574E2, #6972E1, #6E70E1, #726DE0, #766BDF, #7A69DE, #7E67DE, #8265DD, #8763DC, #8B61DB, #8F5EDB, #935CDA, #975AD9, #9B58D8, #A056D8, #A454D7, #A852D6, #AC50D5, #B04DD5, #B44BD4, #B949D3, #BD47D2, #C145D2, #C543D1, #C941D0, #CD3ECF, #D23CCF, #D63ACE, #DA38CD
+
+- Array
+
+["6176E3","6574E2","6972E1","6E70E1","726DE0","766BDF","7A69DE","7E67DE","8265DD","8763DC","8B61DB","8F5EDB","935CDA","975AD9","9B58D8","A056D8","A454D7","A852D6","AC50D5","B04DD5","B44BD4","B949D3","BD47D2","C145D2","C543D1","C941D0","CD3ECF","D23CCF","D63ACE","DA38CD"]
+
+- Object
+
+{"Royal Blue (web color)":"6176E3","Royal Blue (web color) 2":"6574E2","Medium slate blue":"6972E1","Medium slate blue 2":"6E70E1","Medium slate blue 3":"726DE0","Medium slate blue 4":"766BDF","Medium slate blue 5":"7A69DE","Medium slate blue 6":"7E67DE","Medium slate blue 7":"8265DD","Medium slate blue 8":"8763DC","Amethyst":"8B61DB","Amethyst 2":"8F5EDB","Amethyst 3":"935CDA","Amethyst 4":"975AD9","Amethyst 5":"9B58D8","Amethyst 6":"A056D8","Amethyst 7":"A454D7","Amethyst 8":"A852D6","Amethyst 9":"AC50D5","Steel pink":"B04DD5","Steel pink 2":"B44BD4","Steel pink 3":"B949D3","Steel pink 4":"BD47D2","Steel pink 5":"C145D2","Steel pink 6":"C543D1","Steel pink 7":"C941D0","Steel pink 8":"CD3ECF","Steel pink 9":"D23CCF","Steel pink 10":"D63ACE","Steel pink 11":"DA38CD"}
+
+- Extended Array
+
+[{"name":"Royal Blue (web color)","hex":"6176E3","rgb":[97,118,227],"cmyk":[57,48,0,11],"hsb":[230,57,89],"hsl":[230,70,64],"lab":[53,24,-58]},{"name":"Royal Blue (web color)","hex":"6574E2","rgb":[101,116,226],"cmyk":[55,49,0,11],"hsb":[233,55,89],"hsl":[233,68,64],"lab":[53,26,-58]},{"name":"Medium slate blue","hex":"6972E1","rgb":[105,114,225],"cmyk":[53,49,0,12],"hsb":[236,53,88],"hsl":[236,67,65],"lab":[52,28,-58]},{"name":"Medium slate blue","hex":"6E70E1","rgb":[110,112,225],"cmyk":[51,50,0,12],"hsb":[239,51,88],"hsl":[239,66,66],"lab":[52,30,-58]},{"name":"Medium slate blue","hex":"726DE0","rgb":[114,109,224],"cmyk":[49,51,0,12],"hsb":[243,51,88],"hsl":[243,65,65],"lab":[52,32,-58]},{"name":"Medium slate blue","hex":"766BDF","rgb":[118,107,223],"cmyk":[47,52,0,13],"hsb":[246,52,87],"hsl":[246,64,65],"lab":[51,34,-58]},{"name":"Medium slate blue","hex":"7A69DE","rgb":[122,105,222],"cmyk":[45,53,0,13],"hsb":[249,53,87],"hsl":[249,64,64],"lab":[51,36,-58]},{"name":"Medium slate blue","hex":"7E67DE","rgb":[126,103,222],"cmyk":[43,54,0,13],"hsb":[252,54,87],"hsl":[252,64,64],"lab":[51,38,-58]},{"name":"Medium slate blue","hex":"8265DD","rgb":[130,101,221],"cmyk":[41,54,0,13],"hsb":[254,54,87],"hsl":[254,64,63],"lab":[51,40,-58]},{"name":"Medium slate blue","hex":"8763DC","rgb":[135,99,220],"cmyk":[39,55,0,14],"hsb":[258,55,86],"hsl":[258,63,63],"lab":[51,42,-57]},{"name":"Amethyst","hex":"8B61DB","rgb":[139,97,219],"cmyk":[37,56,0,14],"hsb":[261,56,86],"hsl":[261,63,62],"lab":[51,43,-57]},{"name":"Amethyst","hex":"8F5EDB","rgb":[143,94,219],"cmyk":[35,57,0,14],"hsb":[264,57,86],"hsl":[264,63,61],"lab":[51,46,-57]},{"name":"Amethyst","hex":"935CDA","rgb":[147,92,218],"cmyk":[33,58,0,15],"hsb":[266,58,85],"hsl":[266,63,61],"lab":[51,48,-57]},{"name":"Amethyst","hex":"975AD9","rgb":[151,90,217],"cmyk":[30,59,0,15],"hsb":[269,59,85],"hsl":[269,63,60],"lab":[51,49,-56]},{"name":"Amethyst","hex":"9B58D8","rgb":[155,88,216],"cmyk":[28,59,0,15],"hsb":[271,59,85],"hsl":[271,62,60],"lab":[51,51,-55]},{"name":"Amethyst","hex":"A056D8","rgb":[160,86,216],"cmyk":[26,60,0,15],"hsb":[274,60,85],"hsl":[274,63,59],"lab":[51,53,-55]},{"name":"Amethyst","hex":"A454D7","rgb":[164,84,215],"cmyk":[24,61,0,16],"hsb":[277,61,84],"hsl":[277,62,59],"lab":[51,55,-54]},{"name":"Amethyst","hex":"A852D6","rgb":[168,82,214],"cmyk":[21,62,0,16],"hsb":[279,62,84],"hsl":[279,62,58],"lab":[51,57,-54]},{"name":"Amethyst","hex":"AC50D5","rgb":[172,80,213],"cmyk":[19,62,0,16],"hsb":[282,62,84],"hsl":[282,61,57],"lab":[51,58,-53]},{"name":"Steel pink","hex":"B04DD5","rgb":[176,77,213],"cmyk":[17,64,0,16],"hsb":[284,64,84],"hsl":[284,62,57],"lab":[51,61,-53]},{"name":"Steel pink","hex":"B44BD4","rgb":[180,75,212],"cmyk":[15,65,0,17],"hsb":[286,65,83],"hsl":[286,61,56],"lab":[51,62,-52]},{"name":"Steel pink","hex":"B949D3","rgb":[185,73,211],"cmyk":[12,65,0,17],"hsb":[289,65,83],"hsl":[289,61,56],"lab":[52,64,-51]},{"name":"Steel pink","hex":"BD47D2","rgb":[189,71,210],"cmyk":[10,66,0,18],"hsb":[291,66,82],"hsl":[291,61,55],"lab":[52,66,-50]},{"name":"Steel pink","hex":"C145D2","rgb":[193,69,210],"cmyk":[8,67,0,18],"hsb":[293,67,82],"hsl":[293,61,55],"lab":[52,67,-49]},{"name":"Steel pink","hex":"C543D1","rgb":[197,67,209],"cmyk":[6,68,0,18],"hsb":[295,68,82],"hsl":[295,61,54],"lab":[52,69,-48]},{"name":"Steel pink","hex":"C941D0","rgb":[201,65,208],"cmyk":[3,69,0,18],"hsb":[297,69,82],"hsl":[297,60,54],"lab":[53,70,-47]},{"name":"Steel pink","hex":"CD3ECF","rgb":[205,62,207],"cmyk":[1,70,0,19],"hsb":[299,70,81],"hsl":[299,60,53],"lab":[53,72,-46]},{"name":"Steel pink","hex":"D23CCF","rgb":[210,60,207],"cmyk":[0,71,1,18],"hsb":[301,71,82],"hsl":[301,62,53],"lab":[53,74,-45]},{"name":"Steel pink","hex":"D63ACE","rgb":[214,58,206],"cmyk":[0,73,4,16],"hsb":[303,73,84],"hsl":[303,66,53],"lab":[54,75,-44]},{"name":"Steel pink","hex":"DA38CD","rgb":[218,56,205],"cmyk":[0,74,6,15],"hsb":[305,74,85],"hsl":[305,69,54],"lab":[54,76,-43]}]
+
+- XML
+
+<palette>
+  <color name="Royal Blue (web color)" hex="6176E3" r="97" g="118" b="227" />
+  <color name="Royal Blue (web color)" hex="6574E2" r="101" g="116" b="226" />
+  <color name="Medium slate blue" hex="6972E1" r="105" g="114" b="225" />
+  <color name="Medium slate blue" hex="6E70E1" r="110" g="112" b="225" />
+  <color name="Medium slate blue" hex="726DE0" r="114" g="109" b="224" />
+  <color name="Medium slate blue" hex="766BDF" r="118" g="107" b="223" />
+  <color name="Medium slate blue" hex="7A69DE" r="122" g="105" b="222" />
+  <color name="Medium slate blue" hex="7E67DE" r="126" g="103" b="222" />
+  <color name="Medium slate blue" hex="8265DD" r="130" g="101" b="221" />
+  <color name="Medium slate blue" hex="8763DC" r="135" g="99" b="220" />
+  <color name="Amethyst" hex="8B61DB" r="139" g="97" b="219" />
+  <color name="Amethyst" hex="8F5EDB" r="143" g="94" b="219" />
+  <color name="Amethyst" hex="935CDA" r="147" g="92" b="218" />
+  <color name="Amethyst" hex="975AD9" r="151" g="90" b="217" />
+  <color name="Amethyst" hex="9B58D8" r="155" g="88" b="216" />
+  <color name="Amethyst" hex="A056D8" r="160" g="86" b="216" />
+  <color name="Amethyst" hex="A454D7" r="164" g="84" b="215" />
+  <color name="Amethyst" hex="A852D6" r="168" g="82" b="214" />
+  <color name="Amethyst" hex="AC50D5" r="172" g="80" b="213" />
+  <color name="Steel pink" hex="B04DD5" r="176" g="77" b="213" />
+  <color name="Steel pink" hex="B44BD4" r="180" g="75" b="212" />
+  <color name="Steel pink" hex="B949D3" r="185" g="73" b="211" />
+  <color name="Steel pink" hex="BD47D2" r="189" g="71" b="210" />
+  <color name="Steel pink" hex="C145D2" r="193" g="69" b="210" />
+  <color name="Steel pink" hex="C543D1" r="197" g="67" b="209" />
+  <color name="Steel pink" hex="C941D0" r="201" g="65" b="208" />
+  <color name="Steel pink" hex="CD3ECF" r="205" g="62" b="207" />
+  <color name="Steel pink" hex="D23CCF" r="210" g="60" b="207" />
+  <color name="Steel pink" hex="D63ACE" r="214" g="58" b="206" />
+  <color name="Steel pink" hex="DA38CD" r="218" g="56" b="205" />
+</palette>
+
+/* CSS HEX */
+--royal-blue-web-color: #6176E3ff;
+--royal-blue-web-color-2: #6574E2ff;
+--medium-slate-blue: #6972E1ff;
+--medium-slate-blue-2: #6E70E1ff;
+--medium-slate-blue-3: #726DE0ff;
+--medium-slate-blue-4: #766BDFff;
+--medium-slate-blue-5: #7A69DEff;
+--medium-slate-blue-6: #7E67DEff;
+--medium-slate-blue-7: #8265DDff;
+--medium-slate-blue-8: #8763DCff;
+--amethyst: #8B61DBff;
+--amethyst-2: #8F5EDBff;
+--amethyst-3: #935CDAff;
+--amethyst-4: #975AD9ff;
+--amethyst-5: #9B58D8ff;
+--amethyst-6: #A056D8ff;
+--amethyst-7: #A454D7ff;
+--amethyst-8: #A852D6ff;
+--amethyst-9: #AC50D5ff;
+--steel-pink: #B04DD5ff;
+--steel-pink-2: #B44BD4ff;
+--steel-pink-3: #B949D3ff;
+--steel-pink-4: #BD47D2ff;
+--steel-pink-5: #C145D2ff;
+--steel-pink-6: #C543D1ff;
+--steel-pink-7: #C941D0ff;
+--steel-pink-8: #CD3ECFff;
+--steel-pink-9: #D23CCFff;
+--steel-pink-10: #D63ACEff;
+--steel-pink-11: #DA38CDff;
+
+/* CSS HSL */
+--royal-blue-web-color: hsla(230, 70%, 64%, 1);
+--royal-blue-web-color-2: hsla(233, 68%, 64%, 1);
+--medium-slate-blue: hsla(236, 67%, 65%, 1);
+--medium-slate-blue-2: hsla(239, 66%, 66%, 1);
+--medium-slate-blue-3: hsla(243, 65%, 65%, 1);
+--medium-slate-blue-4: hsla(246, 64%, 65%, 1);
+--medium-slate-blue-5: hsla(249, 64%, 64%, 1);
+--medium-slate-blue-6: hsla(252, 64%, 64%, 1);
+--medium-slate-blue-7: hsla(254, 64%, 63%, 1);
+--medium-slate-blue-8: hsla(258, 63%, 63%, 1);
+--amethyst: hsla(261, 63%, 62%, 1);
+--amethyst-2: hsla(264, 63%, 61%, 1);
+--amethyst-3: hsla(266, 63%, 61%, 1);
+--amethyst-4: hsla(269, 63%, 60%, 1);
+--amethyst-5: hsla(271, 62%, 60%, 1);
+--amethyst-6: hsla(274, 63%, 59%, 1);
+--amethyst-7: hsla(277, 62%, 59%, 1);
+--amethyst-8: hsla(279, 62%, 58%, 1);
+--amethyst-9: hsla(282, 61%, 57%, 1);
+--steel-pink: hsla(284, 62%, 57%, 1);
+--steel-pink-2: hsla(286, 61%, 56%, 1);
+--steel-pink-3: hsla(289, 61%, 56%, 1);
+--steel-pink-4: hsla(291, 61%, 55%, 1);
+--steel-pink-5: hsla(293, 61%, 55%, 1);
+--steel-pink-6: hsla(295, 61%, 54%, 1);
+--steel-pink-7: hsla(297, 60%, 54%, 1);
+--steel-pink-8: hsla(299, 60%, 53%, 1);
+--steel-pink-9: hsla(301, 62%, 53%, 1);
+--steel-pink-10: hsla(303, 66%, 53%, 1);
+--steel-pink-11: hsla(305, 69%, 54%, 1);
+
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #6176E3ff, #6574E2ff, #6972E1ff, #6E70E1ff, #726DE0ff, #766BDFff, #7A69DEff, #7E67DEff, #8265DDff, #8763DCff, #8B61DBff, #8F5EDBff, #935CDAff, #975AD9ff, #9B58D8ff, #A056D8ff, #A454D7ff, #A852D6ff, #AC50D5ff, #B04DD5ff, #B44BD4ff, #B949D3ff, #BD47D2ff, #C145D2ff, #C543D1ff, #C941D0ff, #CD3ECFff, #D23CCFff, #D63ACEff, #DA38CDff);
+$gradient-right: linear-gradient(90deg, #6176E3ff, #6574E2ff, #6972E1ff, #6E70E1ff, #726DE0ff, #766BDFff, #7A69DEff, #7E67DEff, #8265DDff, #8763DCff, #8B61DBff, #8F5EDBff, #935CDAff, #975AD9ff, #9B58D8ff, #A056D8ff, #A454D7ff, #A852D6ff, #AC50D5ff, #B04DD5ff, #B44BD4ff, #B949D3ff, #BD47D2ff, #C145D2ff, #C543D1ff, #C941D0ff, #CD3ECFff, #D23CCFff, #D63ACEff, #DA38CDff);
+$gradient-bottom: linear-gradient(180deg, #6176E3ff, #6574E2ff, #6972E1ff, #6E70E1ff, #726DE0ff, #766BDFff, #7A69DEff, #7E67DEff, #8265DDff, #8763DCff, #8B61DBff, #8F5EDBff, #935CDAff, #975AD9ff, #9B58D8ff, #A056D8ff, #A454D7ff, #A852D6ff, #AC50D5ff, #B04DD5ff, #B44BD4ff, #B949D3ff, #BD47D2ff, #C145D2ff, #C543D1ff, #C941D0ff, #CD3ECFff, #D23CCFff, #D63ACEff, #DA38CDff);
+$gradient-left: linear-gradient(270deg, #6176E3ff, #6574E2ff, #6972E1ff, #6E70E1ff, #726DE0ff, #766BDFff, #7A69DEff, #7E67DEff, #8265DDff, #8763DCff, #8B61DBff, #8F5EDBff, #935CDAff, #975AD9ff, #9B58D8ff, #A056D8ff, #A454D7ff, #A852D6ff, #AC50D5ff, #B04DD5ff, #B44BD4ff, #B949D3ff, #BD47D2ff, #C145D2ff, #C543D1ff, #C941D0ff, #CD3ECFff, #D23CCFff, #D63ACEff, #DA38CDff);
+$gradient-top-right: linear-gradient(45deg, #6176E3ff, #6574E2ff, #6972E1ff, #6E70E1ff, #726DE0ff, #766BDFff, #7A69DEff, #7E67DEff, #8265DDff, #8763DCff, #8B61DBff, #8F5EDBff, #935CDAff, #975AD9ff, #9B58D8ff, #A056D8ff, #A454D7ff, #A852D6ff, #AC50D5ff, #B04DD5ff, #B44BD4ff, #B949D3ff, #BD47D2ff, #C145D2ff, #C543D1ff, #C941D0ff, #CD3ECFff, #D23CCFff, #D63ACEff, #DA38CDff);
+$gradient-bottom-right: linear-gradient(135deg, #6176E3ff, #6574E2ff, #6972E1ff, #6E70E1ff, #726DE0ff, #766BDFff, #7A69DEff, #7E67DEff, #8265DDff, #8763DCff, #8B61DBff, #8F5EDBff, #935CDAff, #975AD9ff, #9B58D8ff, #A056D8ff, #A454D7ff, #A852D6ff, #AC50D5ff, #B04DD5ff, #B44BD4ff, #B949D3ff, #BD47D2ff, #C145D2ff, #C543D1ff, #C941D0ff, #CD3ECFff, #D23CCFff, #D63ACEff, #DA38CDff);
+$gradient-top-left: linear-gradient(225deg, #6176E3ff, #6574E2ff, #6972E1ff, #6E70E1ff, #726DE0ff, #766BDFff, #7A69DEff, #7E67DEff, #8265DDff, #8763DCff, #8B61DBff, #8F5EDBff, #935CDAff, #975AD9ff, #9B58D8ff, #A056D8ff, #A454D7ff, #A852D6ff, #AC50D5ff, #B04DD5ff, #B44BD4ff, #B949D3ff, #BD47D2ff, #C145D2ff, #C543D1ff, #C941D0ff, #CD3ECFff, #D23CCFff, #D63ACEff, #DA38CDff);
+$gradient-bottom-left: linear-gradient(315deg, #6176E3ff, #6574E2ff, #6972E1ff, #6E70E1ff, #726DE0ff, #766BDFff, #7A69DEff, #7E67DEff, #8265DDff, #8763DCff, #8B61DBff, #8F5EDBff, #935CDAff, #975AD9ff, #9B58D8ff, #A056D8ff, #A454D7ff, #A852D6ff, #AC50D5ff, #B04DD5ff, #B44BD4ff, #B949D3ff, #BD47D2ff, #C145D2ff, #C543D1ff, #C941D0ff, #CD3ECFff, #D23CCFff, #D63ACEff, #DA38CDff);
+$gradient-radial: radial-gradient(#6176E3ff, #6574E2ff, #6972E1ff, #6E70E1ff, #726DE0ff, #766BDFff, #7A69DEff, #7E67DEff, #8265DDff, #8763DCff, #8B61DBff, #8F5EDBff, #935CDAff, #975AD9ff, #9B58D8ff, #A056D8ff, #A454D7ff, #A852D6ff, #AC50D5ff, #B04DD5ff, #B44BD4ff, #B949D3ff, #BD47D2ff, #C145D2ff, #C543D1ff, #C941D0ff, #CD3ECFff, #D23CCFff, #D63ACEff, #DA38CDff);

@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+    --blue: #2d00f7ff;
+    --electric-indigo: #6a00f4ff;
+    --violet: #8900f2ff;
+    --veronica: #a100f2ff;
+    --veronica-2: #b100e8ff;
+    --electric-purple: #bc00ddff;
+    --steel-pink: #d100d1ff;
+    --steel-pink-2: #db00b6ff;
+    --hollywood-cerise: #e500a4ff;
+    --magenta: #f20089ff;
+    --bg--color: #111
+}
+
+body {
+    background-color: #010208;
+}
+
+.card {
+    background: linear-gradient(90deg, var(--magenta), var(--blue));
+}
