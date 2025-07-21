@@ -3,6 +3,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
+import Button from "../components/Button";
+import Input from "../components/Input";
 
 export default function SignupPage() {
   const navigate = useNavigate();
@@ -38,7 +40,7 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+    <div className="h-[100dvh] flex items-center justify-center bg-gray-100 p-4">
       <motion.form
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -51,73 +53,47 @@ export default function SignupPage() {
         </h2>
 
         <div className="mb-4">
-          <label
-            htmlFor="name"
-            className="block text-gray-700 font-medium mb-2"
-          >
-            Name
-          </label>
-          <input
+          <Input
             id="name"
             name="name"
             type="text"
+            label="Name"
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={loading}
           />
         </div>
 
         <div className="mb-4">
-          <label
-            htmlFor="email"
-            className="block text-gray-700 font-medium mb-2"
-          >
-            Email
-          </label>
-          <input
+          <Input
             id="email"
             name="email"
             type="email"
+            label="Email"
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={loading}
           />
         </div>
 
         <div className="mb-6">
-          <label
-            htmlFor="password"
-            className="block text-gray-700 font-medium mb-2"
-          >
-            Password
-          </label>
-          <input
+          <Input
             id="password"
             name="password"
             type="password"
+            label="Password"
             required
             value={formData.password}
             onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={loading}
           />
         </div>
 
-        <button
-          type="submit"
-          disabled={loading}
-          className={`w-full py-2 text-white rounded-md transition-colors ${
-            loading
-              ? "bg-blue-400 cursor-not-allowed"
-              : "bg-blue-600 hover:bg-blue-700"
-          }`}
-        >
-          {loading ? "Signing up..." : "Sign Up"}
-        </button>
+        <Button type="submit" disabled={loading} loading={loading}>
+          Log In
+        </Button>
         <div className="mt-6 text-center">
           <p className="text-gray-600">
             Already have an account?

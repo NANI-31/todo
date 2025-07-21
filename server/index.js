@@ -23,6 +23,7 @@ app.use(
 );
 
 app.use("/api/auth", require("./routes/auth"));
+app.use("/api/tasks", require("./routes/task"));
 
 app.listen(5000, () => {
   console.log("server listening on port 5000!");

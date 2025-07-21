@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios from "../hooks/axiosConfig";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
+import Button from "../components/Button";
+import Input from "../components/Input";
+import { UserData } from "../hooks/useUser";
+
 export default function LoginPage() {
+  const { setUser } = UserData();
+  const navigate = useNavigate();
   const [email, setEmail] = useState("a@a.com");
   const [password, setPassword] = useState("a");
   const [loading, setLoading] = useState(false);
@@ -12,14 +21,17 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      const { data } = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        { email, password }
-      );
+      const res = await axios.post("api/auth/login", {
+        email,
+        password,
+      });
+      console.log(res.data.user);
       setLoading(false);
+      setUser(res.data.user);
       toast.success("Login successful!");
       setEmail("");
       setPassword("");
+      navigate("/todo/dashboard");
     } catch (err) {
       toast.error(
         err.response?.data?.message || "Something went wrong. Please try again."
@@ -30,64 +42,73 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-      <form
+    <div className="h-[100dvh] flex items-center justify-center bg-gray-100 p-4">
+      <motion.form
         onSubmit={handleSubmit}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
       >
-        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">
+        <motion.h2
+          className="text-2xl font-semibold mb-6 text-center text-gray-800"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.1 }}
+        >
           Login
-        </h2>
+        </motion.h2>
 
-        <div className="mb-4">
-          <label
-            htmlFor="email"
-            className="block text-gray-700 mb-2 font-medium"
-          >
-            Email
-          </label>
-          <input
+        <motion.div
+          className="mb-4"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.1 }}
+        >
+          <Input
             id="email"
             type="email"
+            label="Email"
             required
             placeholder="you@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
-        </div>
+        </motion.div>
 
-        <div className="mb-6">
-          <label
-            htmlFor="password"
-            className="block text-gray-700 mb-2 font-medium"
-          >
-            Password
-          </label>
-          <input
+        <motion.div
+          className="mb-6"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          <Input
             id="password"
             type="password"
+            label="Password"
             required
             placeholder="Enter your password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           />
-        </div>
+        </motion.div>
 
-        <button
-          type="submit"
-          disabled={loading}
-          className={`w-full py-2 text-white rounded-md transition-colors ${
-            loading
-              ? "bg-blue-400 cursor-not-allowed"
-              : "bg-blue-600 hover:bg-blue-700"
-          }`}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
         >
-          {loading ? "Logging in..." : "Log In"}
-        </button>
+          <Button type="submit" disabled={loading} loading={loading}>
+            Log In
+          </Button>
+        </motion.div>
 
-        <div className="mt-6 text-center">
+        <motion.div
+          className="mt-6 text-center"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.2 }}
+        >
           <p className="text-gray-600">
             Don't have an account?
             <Link
@@ -97,8 +118,8 @@ export default function LoginPage() {
               Sign up here
             </Link>
           </p>
-        </div>
-      </form>
+        </motion.div>
+      </motion.form>
     </div>
   );
 }

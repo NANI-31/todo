@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 const createSampleUsers = require("./createUsers");
+const createSampleTasks = require("./createTasks");
 
 const DB = process.env.MONGO_DB_URL;
 
@@ -14,6 +15,7 @@ const connectDB = async () => {
     //   console.log("Admin already exists, skipping save.");
     // }
     // await createSampleUsers();
+    // await createSampleTasks();
   } catch (err) {
     console.log("error : " + err.message);
   }

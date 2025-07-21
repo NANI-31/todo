@@ -18,6 +18,26 @@ body {
     background-color: #010208;
 }
 
+.custom-scrollbar {
+    /* scrollbar-width: thin; */
+    /* scrollbar-color: #3b82f6 #f1f1f1; */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #929292;
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    /* background: transparent; */
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
 .card {
     background: linear-gradient(90deg, var(--magenta), var(--blue));
 }
