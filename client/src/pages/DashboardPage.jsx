@@ -11,49 +11,17 @@ import { UserData } from "../hooks/useUser";
 
 const DashboardPage = () => {
   const navigate = useNavigate();
-  const { setTasks, user } = UserData();
-  const userId = user.id;
+  const { setTasks, tasks, user, updateTask } = UserData();
+  const [filterType, setFilterType] = useState("status");
+  const userId = user._id;
   const [userTasks, setUserTasks] = useState([]);
   const [filter, setFilter] = useState("all"); // all, completed, incomplete
   const [sortBy, setSortBy] = useState("dueDate"); // dueDate, priority
+  const [priorityFilter, setPriorityFilter] = useState("all");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Fetch tasks from backend with filters and sorting
-  const fetchTaskss = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-
-      // Build query params
-      let query = [];
-      if (filter !== "all") {
-        query.push(`status=${filter}`);
-      }
-      if (sortBy) {
-        query.push(`sortBy=${sortBy}`);
-      }
-      const queryString = query.length > 0 ? "?" + query.join("&") : "";
-
-      // Assuming JWT token stored in localStorage
-      const token = localStorage.getItem("token");
-
-      const res = await axios.get(`/api/tasks${queryString}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-
-      setTasks(res.data);
-    } catch (err) {
-      setError(err.response?.data?.message || "Failed to fetch tasks");
-    } finally {
-      setLoading(false);
-    }
-  };
-  //   useEffect(() => {
-  //     fetchTasks();
-  //   }, [filter, sortBy]);
+  // tasks to with filters and sorting
   const fetchTasks = async () => {
     try {
       setLoading(true);
@@ -79,22 +47,66 @@ const DashboardPage = () => {
   useEffect(() => {
     fetchTasks();
   }, []);
+  const filterTasks = () => {
+    let filteredTasks = [...userTasks];
 
+    // Filter by status (completed/incomplete)
+    if (filter === "completed") {
+      filteredTasks = filteredTasks.filter((task) => task.isCompleted);
+    } else if (filter === "incomplete") {
+      filteredTasks = filteredTasks.filter((task) => !task.isCompleted);
+    }
+
+    // Filter by priority (low, medium, high)
+    if (priorityFilter !== "all") {
+      filteredTasks = filteredTasks.filter(
+        (task) => task.priority.toLowerCase() === priorityFilter
+      );
+    }
+
+    // Sort tasks
+    // Sorting Logic
+    if (sortBy === "dueDate") {
+      filteredTasks.sort((a, b) => new Date(a.dueDate) - new Date(b.dueDate));
+    } else if (sortBy === "priority") {
+      const priorityOrder = ["high", "medium", "low"]; // High comes first
+      filteredTasks.sort((a, b) => {
+        const priorityA = a.priority ? a.priority.toLowerCase() : "low"; // Default to "low" if no priority
+        const priorityB = b.priority ? b.priority.toLowerCase() : "low"; // Default to "low" if no priority
+        return (
+          priorityOrder.indexOf(priorityA) - priorityOrder.indexOf(priorityB)
+        ); // Sort by priority
+      });
+    }
+
+    console.log("Filtered Tasks before sorting:", filteredTasks);
+    return filteredTasks;
+  };
   // Toggle task completion
   const toggleComplete = async (taskId, currentStatus) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.put(
-        `/api/tasks/${taskId}`,
-        { isCompleted: !currentStatus },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
+      const res = await axios.put(
+        `/api/tasks/update/${taskId}`,
+        { isCompleted: !currentStatus }
+        // {
+        //   headers: {
+        //     Authorization: `Bearer ${token}`,
+        //   },
+        // }
       );
       // Refresh tasks after update
-      fetchTasks();
+      updateTask(res.data.task);
+      // setUserTasks(tasks);
+      setUserTasks((prevTasks) =>
+        prevTasks.map((task) => {
+          if (task._id === taskId) {
+            return { ...task, isCompleted: !task.isCompleted };
+          }
+          return task;
+        })
+      );
+      // fetchTasks();
     } catch (err) {
       alert("Error updating task status");
     }
@@ -127,48 +139,70 @@ const DashboardPage = () => {
       </h1>
 
       {/* Filters */}
-      <div className="flex flex-row max-sm:flex-row sm:items-center justify-between gap-4 mb-8">
-        <Select
-          id="filter"
-          label="Filter By Status"
-          value={filter}
-          onChange={(e) => setFilter(e.target.value)}
-          options={[
-            { value: "all", label: "All" },
-            { value: "completed", label: "Completed" },
-            { value: "incomplete", label: "Incomplete" },
-          ]}
-          className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-          labelClassName="text-sm !mb-0 font-medium text-gray-700 whitespace-nowrap dark:text-gray-300"
-          containerClassName="flex max-sm:flex-col sm:items-center gap-2"
-        />
-        <Select
-          id="priority"
-          label="Priority"
-          value={filter}
-          onChange={(e) => setFilter(e.target.value)}
-          options={[
-            { value: "low", label: "Low" },
-            { value: "medium", label: "Medium" },
-            { value: "high", label: "High" },
-          ]}
-          className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-          labelClassName="text-sm !mb-0 font-medium text-gray-700 whitespace-nowrap dark:text-gray-300"
-          containerClassName="flex max-sm:flex-col sm:items-center gap-2"
-        />
-        <Select
-          id="sortBy"
-          label="Sort By"
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value)}
-          options={[
-            { value: "dueDate", label: "Due Date" },
-            { value: "priority", label: "Priority" },
-          ]}
-          className="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-          labelClassName="text-sm !mb-0 font-medium text-gray-700 whitespace-nowrap dark:text-gray-300"
-          containerClassName="flex max-sm:flex-col sm:items-center gap-2"
-        />
+      <div className="flex max-xs:flex-col xs:justify-between items-center gap-4 mb-8">
+        {/* Filter By Dropdown */}
+        <div className="flex gap-4 w-full max-xs:flex-col xs:items-baseline-last">
+          <Select
+            id="filterType"
+            label="Filter By"
+            value={filterType}
+            onChange={(e) => setFilterType(e.target.value)}
+            options={[
+              { value: "status", label: "Status" },
+              { value: "priority", label: "Priority" },
+            ]}
+            className="border border-gray-300 rounded px-4 pl-1 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            labelClassName="text-sm !mb-0 font-medium text-gray-700 whitespace-nowrap dark:text-gray-300"
+            containerClassName="flex max-sm:flex-col sm:items-center gap-2"
+          />
+
+          {/* Filter Options Dropdown */}
+          {filterType === "status" ? (
+            <Select
+              id="filterStatus"
+              value={filter}
+              label=""
+              onChange={(e) => setFilter(e.target.value)}
+              options={[
+                { value: "all", label: "All" },
+                { value: "completed", label: "Completed" },
+                { value: "incomplete", label: "Incomplete" },
+              ]}
+              labelClassName="text-sm !mb-0 font-medium text-gray-700 whitespace-nowrap dark:text-gray-300"
+              containerClassName="flex max-sm:flex-col sm:items-center gap-2"
+              className="border border-gray-300 rounded px-4 pl-1 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            />
+          ) : (
+            <Select
+              id="filterPriority"
+              value={priorityFilter}
+              onChange={(e) => setPriorityFilter(e.target.value)}
+              options={[
+                { value: "all", label: "All" },
+                { value: "low", label: "Low" },
+                { value: "medium", label: "Medium" },
+                { value: "high", label: "High" },
+              ]}
+              className="border border-gray-300 rounded px-8 pl-1 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            />
+          )}
+        </div>
+        <div className="xs:flex w-full justify-end">
+          {/* Sorting Dropdown */}
+          <Select
+            id="sortBy"
+            label="Sort By"
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            options={[
+              { value: "dueDate", label: "Due Date" },
+              { value: "priority", label: "Priority" },
+            ]}
+            className="border !w-full border-gray-300 rounded px-5 pl-1 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            labelClassName="text-sm !mb-0 font-medium text-gray-700 whitespace-nowrap dark:text-gray-300"
+            containerClassName="flex max-sm:flex-col sm:items-center gap-2"
+          />
+        </div>
       </div>
 
       {/* Task List */}
@@ -181,7 +215,7 @@ const DashboardPage = () => {
       )}
 
       <ul className="space-y-6">
-        {userTasks.map((task) => (
+        {filterTasks().map((task) => (
           <li
             key={task._id}
             className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 transition hover:shadow-md dark:bg-gray-900 dark:border-gray-700 dark:text-white"
@@ -211,9 +245,9 @@ const DashboardPage = () => {
                   <span className="font-medium">Priority:</span>{" "}
                   <span
                     className={`font-semibold ${
-                      task.priority === "high"
+                      task.priority === "High"
                         ? "text-red-600"
-                        : task.priority === "medium"
+                        : task.priority === "Medium"
                         ? "text-yellow-600"
                         : "text-green-600"
                     }`}
@@ -229,22 +263,22 @@ const DashboardPage = () => {
                   onClick={() => toggleComplete(task._id, task.isCompleted)}
                   className={`px-4 sm:w-40 rounded font-medium transition ${
                     task.isCompleted
-                      ? "bg-yellow-400 text-black hover:bg-yellow-500"
-                      : "bg-green-600 hover:bg-green-700 text-white"
+                      ? "!bg-yellow-400 text-black !hover:bg-yellow-500"
+                      : "!bg-green-600 !hover:bg-green-700 !text-white"
                   }`}
                 >
                   {task.isCompleted ? "Mark Incomplete" : "Mark Complete"}
                 </Button>
-                <div className="flex gap-2">
+                <div className="flex flex-col xs:flex-row gap-2">
                   <Button
                     onClick={() => navigate(`/todo/dashboard/edit/${task._id}`)}
-                    className="bg-sky-600 flex-1 hover:bg-red-700"
+                    className="!bg-sky-600 !flex-1 !hover:bg-red-700"
                   >
                     Edit
                   </Button>
                   <Button
                     onClick={() => deleteTask(task._id)}
-                    className="bg-red-600 flex-1 hover:bg-red-700"
+                    className="!bg-red-600 !flex-1 !hover:bg-red-700"
                   >
                     Delete
                   </Button>

@@ -1,14 +1,17 @@
-import React from "react";
+import React, { use, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserData } from "../hooks/useUser";
 import { persistor } from "../redux/store";
 
-export default function logout() {
+export default function Logout() {
   const navigate = useNavigate();
-  //   UserData.clearUser();
   const { clearUser } = UserData();
-  clearUser();
-  persistor.purge();
-  navigate("/login");
-  return <div>logout</div>;
+  //   UserData.clearUser();
+  useEffect(() => {
+    // localStorage.removeItem("token");
+    // localStorage.removeItem("theme");
+    clearUser();
+    persistor.purge();
+    navigate("/login");
+  }, []);
 }

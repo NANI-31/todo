@@ -34,7 +34,7 @@ const CreateTask = () => {
       const token = localStorage.getItem("token");
       const response = await axios.post(
         "api/tasks/create",
-        { ...formData, userId: user.id }
+        { ...formData, userId: user._id }
         // {
         //   headers: {
         //     Authorization: `Bearer ${token}`,
@@ -50,7 +50,7 @@ const CreateTask = () => {
       });
 
       setTimeout(() => {
-        navigate("/dashboard");
+        navigate("/todo/dashboard");
       }, 1000);
     } catch (err) {
       setError(err.response?.data?.message || "Error creating task.");
@@ -88,9 +88,9 @@ const CreateTask = () => {
             onChange={handleChange}
             required
             options={[
-              { value: "low", label: "Low" },
-              { value: "medium", label: "Medium" },
-              { value: "high", label: "High" },
+              { value: "Low", label: "Low" },
+              { value: "Medium", label: "Medium" },
+              { value: "High", label: "High" },
             ]}
           />
 

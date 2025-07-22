@@ -32,6 +32,8 @@ export default function Button({
         }
         ${sizeClasses[size]} 
         ${className}
+         dark:bg-blue-700 dark:hover:bg-blue-800 dark:text-white
+    dark:disabled:bg-blue-400 dark:disabled:cursor-not-allowed
         `}
       {...rest}
     >

@@ -29,7 +29,7 @@ const EditTask = () => {
         setFormData({
           title: response.title,
           description: response.description,
-          priority: response.priority.toLowerCase(),
+          priority: response.priority,
           dueDate: response.dueDate,
         });
       } catch (err) {
@@ -66,7 +66,7 @@ const EditTask = () => {
       const token = localStorage.getItem("token");
       const response = await axios.put(
         `/api/tasks/update/${taskId}`,
-        { taskData }
+        { ...formData, dueDate: formattedDueDate, userId: user.id }
         // {
         //   headers: {
         //     Authorization: `Bearer ${token}`,
@@ -75,9 +75,9 @@ const EditTask = () => {
       );
       setSuccess("Task updated successfully!");
 
-      setTimeout(() => {
-        navigate("/todo/dashboard"); // Redirect to the dashboard
-      }, 1000);
+      // setTimeout(() => {
+      //   navigate("/todo/dashboard");
+      // }, 1000);
     } catch (err) {
       setError(err.response?.data?.message || "Error updating task.");
     }
@@ -119,9 +119,9 @@ const EditTask = () => {
             onChange={handleChange}
             required
             options={[
-              { value: "low", label: "Low" },
-              { value: "medium", label: "Medium" },
-              { value: "high", label: "High" },
+              { value: "Low", label: "Low" },
+              { value: "Medium", label: "Medium" },
+              { value: "High", label: "High" },
             ]}
           />
 

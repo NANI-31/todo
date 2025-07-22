@@ -40,15 +40,15 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="h-[100dvh] flex items-center justify-center bg-gray-100 p-4">
+    <div className="h-[100dvh] flex items-center justify-center dark:bg-gray-900 bg-gray-100 p-4">
       <motion.form
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md"
+        className="bg-white p-8 dark:bg-gray-800 rounded-lg shadow-lg w-full max-w-md"
       >
-        <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
+        <h2 className="text-2xl font-bold text-center mb-6  dark:text-white text-gray-800">
           Sign Up
         </h2>
 
@@ -92,10 +92,10 @@ export default function SignupPage() {
         </div>
 
         <Button type="submit" disabled={loading} loading={loading}>
-          Log In
+          Signup
         </Button>
         <div className="mt-6 text-center">
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-300">
             Already have an account?
             <Link
               to="/"

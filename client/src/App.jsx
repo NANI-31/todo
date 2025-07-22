@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
+import Logout from "./pages/logout";
 import Layout from "./components/Layout";
 import DashboardPage from "./pages/DashboardPage";
 import CreateTask from "./pages/CreateTask";
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/todo" element={<Layout />}>
             <Route path="dashboard" element={<DashboardPage />} />
             <Route path="dashboard/edit/:taskId" element={<EditTask />} />

@@ -3,6 +3,7 @@ import React from "react";
 
 export default function Textarea({
   id,
+  name,
   label,
   value,
   onChange,
@@ -21,6 +22,7 @@ export default function Textarea({
       )}
       <textarea
         id={id}
+        name={name}
         value={value}
         onChange={onChange}
         rows={rows}

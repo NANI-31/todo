@@ -104,7 +104,7 @@ export default function DashboardLayout() {
               </NavLink>
             </li>
             <li>
-              <div className="flex items-center justify-between px-4 py-2 rounded dark:bg-gray-700">
+              <div className="flex items-center justify-between px-4 py-2 rounded">
                 <span className="font-medium text-gray-900 dark:text-gray-100">
                   Theme
                 </span>
@@ -127,7 +127,7 @@ export default function DashboardLayout() {
           {/* Logout button pinned at bottom */}
           <div className="pt-4 border-t dark:border-gray-700">
             <NavLink
-              to="/login"
+              to="/logout"
               onClick={() => setSidebarOpen(false)}
               className="flex bg-gray-200 items-center justify-between px-4 py-2 rounded dark:bg-gray-700 dark:text-white"
             >

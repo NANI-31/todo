@@ -42,16 +42,16 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="h-[100dvh] flex items-center justify-center bg-gray-100 p-4">
+    <div className="h-[100dvh] flex items-center justify-center bg-gray-100 dark:bg-gray-900 p-4">
       <motion.form
         onSubmit={handleSubmit}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
+        className="dark:bg-gray-800 bg-white p-8 rounded-lg shadow-md w-full max-w-md"
       >
         <motion.h2
-          className="text-2xl font-semibold mb-6 text-center text-gray-800"
+          className="text-2xl font-semibold mb-6 text-center dark:text-white"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.1 }}
@@ -109,7 +109,7 @@ export default function LoginPage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <p className="text-gray-600">
+          <p className="text-gray-800 dark:text-gray-400">
             Don't have an account?
             <Link
               to="/signup"

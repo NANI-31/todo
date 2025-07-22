@@ -10,6 +10,7 @@ export default function Input({
   onChange,
   placeholder = "",
   required = false,
+  className = "",
 }) {
   return (
     <div className="mb-4">
@@ -29,7 +30,7 @@ export default function Input({
         onChange={onChange}
         placeholder={placeholder}
         required={required}
-        className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+        className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white ${className}`}
       />
     </div>
   );

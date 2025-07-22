@@ -54,8 +54,7 @@ exports.updateTask = async (req, res) => {
   try {
     const { taskId } = req.params;
     const updates = req.body;
-    console.log("update", updates);
-    console.log("taskid:", taskId);
+    console.log(updates);
     if (!mongoose.Types.ObjectId.isValid(taskId)) {
       return res.status(400).json({ message: "Invalid Task ID" });
     }
@@ -64,14 +63,12 @@ exports.updateTask = async (req, res) => {
       return res.status(404).json({ message: "Task not found" });
     }
     Object.keys(updates).forEach((key) => {
-      // console.log(task[key]);
-      // console.log(updates[key]);
       if (updates[key] !== undefined) {
         task[key] = updates[key];
       }
     });
+    console.log("update task", task);
     await task.save();
-    // console.log(task);
     return res.status(200).json({ message: "Task updated successfully", task });
   } catch (err) {
     console.error(err);
@@ -81,6 +78,7 @@ exports.updateTask = async (req, res) => {
 
 exports.createTask = async (req, res) => {
   try {
+    console.log(req.body);
     const { title, description, priority, dueDate, userId } = req.body;
     const task = new Task({
       title,
