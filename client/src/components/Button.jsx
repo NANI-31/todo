@@ -31,10 +31,10 @@ export default function Button({
             : "bg-blue-600 hover:bg-blue-700"
         }
         ${sizeClasses[size]} 
-        ${className}
+       
          dark:bg-blue-700 dark:hover:bg-blue-800 dark:text-white
     dark:disabled:bg-blue-400 dark:disabled:cursor-not-allowed
-        `}
+         ${className}`}
       {...rest}
     >
       {loading ? "Loading..." : children}

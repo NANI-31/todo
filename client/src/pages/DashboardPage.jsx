@@ -8,6 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Button from "../components/Button";
 import Select from "../components/Select";
 import { UserData } from "../hooks/useUser";
+import { MdDelete, MdModeEdit } from "react-icons/md";
+import AnimatedCheckbox from "../components/AnimatedCheckbox";
 
 const DashboardPage = () => {
   const navigate = useNavigate();
@@ -20,6 +22,13 @@ const DashboardPage = () => {
   const [priorityFilter, setPriorityFilter] = useState("all");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [atask, setAtask] = useState({
+    label: "Finish React Project",
+    isCompleted: false,
+  });
+  const handleToggle = () => {
+    setAtask((prev) => ({ ...prev, isCompleted: !prev.isCompleted }));
+  };
 
   // tasks to with filters and sorting
   const fetchTasks = async () => {
@@ -135,7 +144,7 @@ const DashboardPage = () => {
   return (
     <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-white dark:bg-gray-800">
       <h1 className="text-4xl font-extrabold text-gray-900 mb-8 dark:text-white">
-        Dashboard
+        My Todos
       </h1>
 
       {/* Filters */}
@@ -258,10 +267,10 @@ const DashboardPage = () => {
               </div>
 
               {/* Actions */}
-              <div className="flex max-sm:flex-col flex-wrap gap-2 sm:items-center">
+              <div className="flex max-xs:flex-co gap-2 items-center">
                 <Button
                   onClick={() => toggleComplete(task._id, task.isCompleted)}
-                  className={`px-4 sm:w-40 rounded font-medium transition ${
+                  className={`px-4 md:block hidden sm:w-40 rounded font-medium transition ${
                     task.isCompleted
                       ? "!bg-yellow-400 text-black !hover:bg-yellow-500"
                       : "!bg-green-600 !hover:bg-green-700 !text-white"
@@ -269,18 +278,30 @@ const DashboardPage = () => {
                 >
                   {task.isCompleted ? "Mark Incomplete" : "Mark Complete"}
                 </Button>
-                <div className="flex flex-col xs:flex-row gap-2">
+                <div className="max-md:block hidden">
+                  <AnimatedCheckbox
+                    taskId={task._id}
+                    atask={task.isCompleted}
+                    onClick={() => toggleComplete(task._id, task.isCompleted)}
+                    className={` ${
+                      task.isCompleted
+                        ? "bg-yellow-400 text-black hover:bg-yellow-500"
+                        : "bg-green-600 hover:bg-green-700 !text-white"
+                    }`}
+                  />
+                </div>
+                <div className="flex flex-row gap-2">
                   <Button
                     onClick={() => navigate(`/todo/dashboard/edit/${task._id}`)}
-                    className="!bg-sky-600 !flex-1 !hover:bg-red-700"
+                    className="!bg-sky-600 !flex-1 !p-2 !hover:bg-red-700"
                   >
-                    Edit
+                    <MdModeEdit style={{ fontSize: "1.2rem" }} />
                   </Button>
                   <Button
                     onClick={() => deleteTask(task._id)}
-                    className="!bg-red-600 !flex-1 !hover:bg-red-700"
+                    className="!bg-red-600 !p-2 !flex-1 hover:bg-red-700"
                   >
-                    Delete
+                    <MdDelete style={{ fontSize: "1.2rem" }} />
                   </Button>
                 </div>
               </div>
