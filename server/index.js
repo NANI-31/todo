@@ -8,7 +8,11 @@ require("dotenv").config();
 require("./config/db");
 
 app.use(cookieParser());
-const allowedOrigins = ["http://localhost:5173", "http://192.168.29.27:5173"];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://192.168.29.27:5173",
+  "https://ticklist.onrender.com",
+];
 app.use(
   cors({
     origin: function (origin, callback) {
