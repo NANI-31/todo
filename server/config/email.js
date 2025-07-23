@@ -1,5 +1,4 @@
 const nodemailer = require("nodemailer");
-require("dotenv").config();
 const transporter = nodemailer.createTransport({
   service: "Gmail", // or use 'hotmail', 'Yahoo', or a custom SMTP service
   auth: {

@@ -31,8 +31,8 @@ exports.login = async (req, res) => {
     console.log("logged");
     res.cookie("token", token, {
       httpOnly: true,
-      secure: false,
-      sameSite: "Strict",
+      secure: true,
+      sameSite: "None",
       maxAge: 24 * 60 * 60 * 1000,
     });
     res.json({
@@ -154,7 +154,7 @@ exports.logout = async (req, res) => {
     res.clearCookie("token", {
       httpOnly: true,
       sameSite: "None",
-      secure: false,
+      secure: true,
     });
     console.log("logged out");
     res.status(200).json({ message: "Logout successful" });

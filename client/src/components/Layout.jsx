@@ -28,7 +28,7 @@ export default function DashboardLayout() {
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
           <div className="w-full flex items-center gap-5">
-            <div className="md:w-16 md:h-16 w-[50px] h-[50px] rounded-full overflow-hidden">
+            <div className="md:w-16 md:h-16 w-[50px] h-[50px] rounded-full dark:shadow dark:shadow-gray-400 overflow-hidden">
               <img
                 src={user?.avatarUrl}
                 alt=""
