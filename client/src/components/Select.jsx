@@ -17,7 +17,7 @@ export default function Select({
       {label && (
         <label
           htmlFor={id}
-          className={`block text-gray-700 dark:text-black mb-2 font-medium ${labelClassName}`}
+          className={`block text-gray-700 dark:text-white mb-2 font-medium ${labelClassName}`}
         >
           {label}
         </label>

@@ -1,6 +1,7 @@
 // src/pages/DashboardPage.jsx
 import React, { useEffect, useState } from "react";
 import axios from "../hooks/axiosConfig";
+import { api } from "../hooks/axiosConfig";
 import { useNavigate } from "react-router-dom";
 // import axios from "axios";
 import sampleTasks from "../utils/sampleTasks";
@@ -10,6 +11,8 @@ import Select from "../components/Select";
 import { UserData } from "../hooks/useUser";
 import { MdDelete, MdModeEdit } from "react-icons/md";
 import AnimatedCheckbox from "../components/AnimatedCheckbox";
+import Modal from "../components/Modal";
+import { toast } from "react-toastify";
 
 const DashboardPage = () => {
   const navigate = useNavigate();
@@ -22,14 +25,12 @@ const DashboardPage = () => {
   const [priorityFilter, setPriorityFilter] = useState("all");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [atask, setAtask] = useState({
-    label: "Finish React Project",
-    isCompleted: false,
-  });
-  const handleToggle = () => {
-    setAtask((prev) => ({ ...prev, isCompleted: !prev.isCompleted }));
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [taskToDelete, setTaskToDelete] = useState(null);
+  const handleDeleteClick = (taskId) => {
+    setTaskToDelete(taskId);
+    setIsModalOpen(true);
   };
-
   // tasks to with filters and sorting
   const fetchTasks = async () => {
     try {
@@ -37,7 +38,7 @@ const DashboardPage = () => {
       setError(null);
 
       // Make the API request to fetch tasks by userId
-      const response = await axios.get(`/api/tasks/${userId}`, {
+      const response = await api.get(`/api/tasks/${userId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -122,33 +123,42 @@ const DashboardPage = () => {
   };
 
   // Delete task
-  const deleteTask = async (taskId) => {
-    if (!window.confirm("Are you sure you want to delete this task?")) return;
-
+  const handleConfirmDelete = async () => {
     try {
       const token = localStorage.getItem("token");
       await axios.delete(
-        `/api/tasks/${taskId}`
+        `/api/tasks/${taskToDelete}`
         // , {
         // headers: {
         //   Authorization: `Bearer ${token}`,
         // },
         // }
       );
+      toast.success("Task deleted successfully!");
       fetchTasks();
     } catch (err) {
+      toast.error("Failed to delete task. Please try again.");
       alert("Error deleting task");
+    } finally {
+      setIsModalOpen(false);
+      setTaskToDelete(null);
     }
   };
-
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setTaskToDelete(null);
+  };
   return (
-    <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-white dark:bg-gray-800">
-      <h1 className="text-4xl font-extrabold text-gray-900 mb-8 dark:text-white">
-        My Todos
+    <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-white bg">
+      <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">
+        My{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-700 to-blue-700">
+          Todos
+        </span>
       </h1>
 
       {/* Filters */}
-      <div className="flex max-xs:flex-col xs:justify-between items-center gap-4 mb-8">
+      <div className="flex max-xs:flex-col xs:justify-between rounded bg-blue-800 px-2 sm:px-10 items-center gap-4 my-4 py-2 sm:py-4">
         {/* Filter By Dropdown */}
         <div className="flex gap-4 w-full max-xs:flex-col xs:items-baseline-last">
           <Select
@@ -160,8 +170,8 @@ const DashboardPage = () => {
               { value: "status", label: "Status" },
               { value: "priority", label: "Priority" },
             ]}
-            className="border border-gray-300 rounded px-4 pl-1 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-            labelClassName="text-sm !mb-0 font-medium text-gray-700 whitespace-nowrap dark:text-gray-300"
+            className="border border-gray-300 rounded px-4 pl-1 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:!bg-gray-200 dark:!text-black dark:border-gray-600 "
+            labelClassName="text-sm !mb-0 font-medium text-gray-700 whitespace-nowrap dark:text-gray-300 text-white"
             containerClassName="flex max-sm:flex-col sm:items-center gap-2"
           />
 
@@ -179,7 +189,7 @@ const DashboardPage = () => {
               ]}
               labelClassName="text-sm !mb-0 font-medium text-gray-700 whitespace-nowrap dark:text-gray-300"
               containerClassName="flex max-sm:flex-col sm:items-center gap-2"
-              className="border border-gray-300 rounded px-4 pl-1 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="border border-gray-300 rounded px-4 pl-1 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:!bg-gray-200 dark:!text-black dark:border-gray-600"
             />
           ) : (
             <Select
@@ -192,7 +202,7 @@ const DashboardPage = () => {
                 { value: "medium", label: "Medium" },
                 { value: "high", label: "High" },
               ]}
-              className="border border-gray-300 rounded px-8 pl-1 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="border border-gray-300 rounded px-8 pl-1 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:!bg-gray-200 dark:!text-black dark:border-gray-600"
             />
           )}
         </div>
@@ -207,8 +217,8 @@ const DashboardPage = () => {
               { value: "dueDate", label: "Due Date" },
               { value: "priority", label: "Priority" },
             ]}
-            className="border !w-full border-gray-300 rounded px-5 pl-1 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-            labelClassName="text-sm !mb-0 font-medium text-gray-700 whitespace-nowrap dark:text-gray-300"
+            className="border !w-full border-gray-300 rounded px-5 pl-1 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:!bg-gray-200 dark:!text-black dark:border-gray-600 "
+            labelClassName="text-sm !mb-0 font-medium text-gray-700 whitespace-nowrap dark:text-gray-300 text-white"
             containerClassName="flex max-sm:flex-col sm:items-center gap-2"
           />
         </div>
@@ -298,7 +308,7 @@ const DashboardPage = () => {
                     <MdModeEdit style={{ fontSize: "1.2rem" }} />
                   </Button>
                   <Button
-                    onClick={() => deleteTask(task._id)}
+                    onClick={() => handleDeleteClick(task._id)}
                     className="!bg-red-600 !p-2 !flex-1 hover:bg-red-700"
                   >
                     <MdDelete style={{ fontSize: "1.2rem" }} />
@@ -309,6 +319,13 @@ const DashboardPage = () => {
           </li>
         ))}
       </ul>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onConfirm={handleConfirmDelete}
+        title="Delete Task"
+        message={`Are you sure you want to delete "${taskToDelete?.title}"? This action cannot be undone.`}
+      />
     </div>
   );
 };

@@ -7,6 +7,7 @@ export default function Textarea({
   label,
   value,
   onChange,
+  className = "",
   rows = 3,
   required = false,
 }) {
@@ -27,7 +28,7 @@ export default function Textarea({
         onChange={onChange}
         rows={rows}
         required={required}
-        className="w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        className={`w-full px-4 py-2 border rounded-md bg-white dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${className}`}
       />
     </div>
   );

@@ -7,5 +7,6 @@ router.post("/signup", authController.signup);
 router.post("/login", authController.login);
 router.post("/profile/update", upload.single("image"), authController.profile);
 router.post("/profile/verify-old-password", authController.verifyPassword);
+router.post("/logout", authController.logout);
 
 module.exports = router;

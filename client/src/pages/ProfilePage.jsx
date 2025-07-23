@@ -4,6 +4,7 @@ import Input from "../components/Input";
 import Button from "../components/Button";
 import { UserData } from "../hooks/useUser";
 import { toast } from "react-toastify";
+import { verifyPassword } from "../services/authService";
 const ProfilePage = () => {
   const { user, setUser } = UserData();
   const [formData, setFormData] = useState({
@@ -61,14 +62,7 @@ const ProfilePage = () => {
     setSaving(true);
 
     try {
-      const response = await axios.post(
-        "/api/auth/profile/verify-old-password",
-        {
-          password: formData.oldpassword,
-          userId: user._id,
-        }
-      );
-
+      const response = await verifyPassword(user._id, formData.oldpassword);
       if (response.data.success) {
         setOldPasswordVerified(true);
         toast.success("Old password verified successfully.");
@@ -140,8 +134,8 @@ const ProfilePage = () => {
   // if (loading) return <p className="p-6">Loading profile...</p>;
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center p-6">
-      <div className="bg-white dark:bg-gray-800 rounded shadow-lg max-w-5xl w-full grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
+    <div className="min-h-screen form-btn dark:bg-gray-900 flex items-center justify-center p-6">
+      <div className="bg-white text-black sidebar-btn--active dark:bg-gray-900 rounded shadow-lg max-w-5xl w-full grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
         {/* Left: Profile Image Section */}
         <div className="flex flex-col items-center space-y-4">
           <div className="xs:w-48 xs:h-48 w-[58vw] h-[58vw] rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
@@ -217,7 +211,7 @@ const ProfilePage = () => {
                 disabled={saving}
                 loading={saving}
                 onClick={verifyOldPassword}
-                className="basis-1/4"
+                className="basis-1/4 btn-outline"
               >
                 verify
               </Button>
@@ -231,7 +225,13 @@ const ProfilePage = () => {
               placeholder="••••••••"
             />
 
-            <Button type="submit" disabled={saving} loading={saving}>
+            <Button
+              type="submit"
+              className="sidebar-btn-active"
+              // className="form-btn"
+              disabled={saving}
+              loading={saving}
+            >
               Update Profile
             </Button>
           </form>

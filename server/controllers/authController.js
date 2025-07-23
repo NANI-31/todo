@@ -1,12 +1,11 @@
 const User = require("../models/UserSchema");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { cloudinary } = require("../config/cloudinary");
-const { Readable } = require("stream");
 const {
   deleteImageFromCloudinary,
   uploadImageToCloudinary,
 } = require("../utils/cloudinaryUtils");
+const { sendVerificationEmail } = require("../utils/verificationEmail");
 
 // Replace with your own secret key in .env file in production
 const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret_key";
@@ -30,9 +29,14 @@ exports.login = async (req, res) => {
     const payload = { userId: user._id };
     const token = jwt.sign(payload, JWT_SECRET, { expiresIn: "1h" });
     console.log("logged");
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: false,
+      sameSite: "Strict",
+      maxAge: 24 * 60 * 60 * 1000,
+    });
     res.json({
       message: "Login successful",
-      token,
       user,
     });
   } catch (err) {
@@ -66,7 +70,7 @@ exports.signup = async (req, res) => {
     const token = jwt.sign({ userId: newUser._id }, JWT_SECRET, {
       expiresIn: "1h",
     });
-
+    await sendVerificationEmail(newUser, token);
     res.status(201).json({
       message: "Signup successful",
       token,
@@ -140,6 +144,20 @@ exports.verifyPassword = async (req, res) => {
     }
     await bcrypt.compare(password, user.password);
     return res.status(200).json({ success: true });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
+  }
+};
+exports.logout = async (req, res) => {
+  try {
+    res.clearCookie("token", {
+      httpOnly: true,
+      sameSite: "None",
+      secure: false,
+    });
+    console.log("logged out");
+    res.status(200).json({ message: "Logout successful" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: "Server error" });

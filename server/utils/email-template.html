@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Email Verification</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background-color: #007bff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header img {
+            max-height: 50px;
+        }
+
+        .content {
+            padding: 30px;
+            color: #333;
+        }
+
+        .content h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #222;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #28a745;
+            color: #fff !important;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #218838;
+        }
+
+        .fallback {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #777;
+            word-break: break-all;
+        }
+
+        .footer {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .social-icons {
+            margin: 15px 0 10px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 8px;
+            text-decoration: none;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .social-icons a:hover img {
+            filter: grayscale(0%);
+        }
+
+        @media only screen and (max-width: 620px) {
+            .container {
+                margin: 20px 10px;
+                width: auto !important;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <!-- Replace the src URL with your actual logo image URL -->
+            <img src="https://yourdomain.com/logo.png" alt="MyApp Logo" />
+        </div>
+        <div class="content">
+            <h2>Hello, {{USER_NAME}}!</h2>
+            <p>Thanks for signing up with <strong>{{USER_EMAIL}}</strong>.</p>
+            <p>To get started, please verify your email address by clicking the button below:</p>
+            <a href="{{VERIFICATION_LINK}}" class="button">Verify Your Email</a>
+            <div class="fallback">
+                <p>If the button above doesn’t work, please copy and paste the link below into your browser:</p>
+                <a href="{{VERIFICATION_LINK}}">{{VERIFICATION_LINK}}</a>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="social-icons">
+                <!-- Replace hrefs with your actual social URLs -->
+                <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
+                </a>
+                <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" />
+                </a>
+                <a href="https://linkedin.com/company/yourcompany" target="_blank" rel="noopener">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
+                </a>
+                <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" />
+                </a>
+            </div>
+            &copy; 2025 MyApp Inc. All rights reserved.<br />
+            123 Main Street, Tech City, 00000
+        </div>
+    </div>
+</body>
+
+</html>

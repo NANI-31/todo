@@ -1,21 +1,12 @@
-// import Sidebar from "./Sidebar";
-// import { Outlet } from "react-router-dom";
-
-// export default function Layout() {
-//   return (
-//     <div className="flex">
-//       <Sidebar />
-//       <Outlet />
-//     </div>
-//   );
-// }
 import React, { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { LuLogOut } from "react-icons/lu";
 import useTheme from "../hooks/useTheme";
+import { UserData } from "../hooks/useUser";
 export default function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isDark, toggleTheme] = useTheme();
+  const { user } = UserData();
   useEffect(() => {
     if (sidebarOpen) {
       document.body.style.overflow = "hidden";
@@ -25,20 +16,30 @@ export default function DashboardLayout() {
   }, [sidebarOpen]);
 
   return (
-    <div className="flex h-screen bg-gray-100 dark:bg-gray-800">
+    <div className="flex h-screen bg-[#e0e0e0] dark:bg-[#010208]">
       {/* Sidebar */}
       <aside
-        className={`fixed inset-y-0 left-0 z-1 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 w-64
-    transform ${
-      sidebarOpen ? "translate-x-0" : "-translate-x-full"
-    } transition-transform duration-300 ease-in-out
-    md:translate-x-0 md:static md:flex-shrink-0
-  `}
+        className={`fixed inset-y-0 left-0 z-1 bg-white dark:bg-[#010208] border-r border-gray-200 dark:border-gray-700 w-64
+                  transform ${
+                    sidebarOpen ? "translate-x-0" : "-translate-x-full"
+                  } transition-transform duration-300 ease-in-out
+                  md:translate-x-0 md:static md:flex-shrink-0
+                `}
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-white">
-            My Dashboard
-          </h2>
+          <div className="w-full flex items-center gap-5">
+            <div className="md:w-16 md:h-16 w-[50px] h-[50px] rounded-full overflow-hidden">
+              <img
+                src={user?.avatarUrl}
+                alt=""
+                className="w-full h-full object-fit"
+              />
+            </div>
+            <h6 className="text-2xl dark:text-white">{user?.name}</h6>
+          </div>
+          {/* <h2 className="text-xl font-bold text-gray-900 dark:text-white"> */}
+          {/* My Dashboard */}
+          {/* </h2> */}
           {/* Close button on mobile */}
           <button
             onClick={() => setSidebarOpen(false)}
@@ -48,7 +49,7 @@ export default function DashboardLayout() {
             ✕
           </button>
         </div>
-        <nav className="p-4 flex flex-col justify-between h-[calc(100dvh-65px)]">
+        <nav className="p-4 flex flex-col justify-between h-[calc(100dvh-110px)]">
           <ul className="space-y-2 flex-1 overflow-y-auto">
             <li>
               <NavLink
@@ -57,8 +58,8 @@ export default function DashboardLayout() {
                 end
                 className={({ isActive }) =>
                   isActive
-                    ? "block px-4 py-2 rounded bg-blue-600 text-white"
-                    : "block px-4 py-2 rounded hover:bg-blue-100 dark:hover:bg-blue-700 dark:text-white"
+                    ? "block px-4 py-2 rounded sidebar-btn-active"
+                    : "block px-4 py-2 rounded sidebar-btn"
                 }
               >
                 Home
@@ -70,8 +71,8 @@ export default function DashboardLayout() {
                 onClick={() => setSidebarOpen(false)}
                 className={({ isActive }) =>
                   isActive
-                    ? "block px-4 py-2 rounded bg-blue-600 text-white"
-                    : "block px-4 py-2 rounded hover:bg-blue-100 dark:hover:bg-blue-700 dark:text-white"
+                    ? "block px-4 py-2 rounded sidebar-btn-active"
+                    : "block px-4 py-2 rounded sidebar-btn"
                 }
               >
                 Create Task
@@ -83,8 +84,8 @@ export default function DashboardLayout() {
                 onClick={() => setSidebarOpen(false)}
                 className={({ isActive }) =>
                   isActive
-                    ? "block px-4 py-2 rounded bg-blue-600 text-white"
-                    : "block px-4 py-2 rounded hover:bg-blue-100 dark:hover:bg-blue-700 dark:text-white"
+                    ? "block px-4 py-2 rounded sidebar-btn-active"
+                    : "block px-4 py-2 rounded sidebar-btn"
                 }
               >
                 Tasks
@@ -96,8 +97,8 @@ export default function DashboardLayout() {
                 onClick={() => setSidebarOpen(false)}
                 className={({ isActive }) =>
                   isActive
-                    ? "block px-4 py-2 rounded bg-blue-600 text-white"
-                    : "block px-4 py-2 rounded hover:bg-blue-100 dark:hover:bg-blue-700 dark:text-white"
+                    ? "block px-4 py-2 rounded sidebar-btn-active"
+                    : "block px-4 py-2 rounded sidebar-btn"
                 }
               >
                 Profile
@@ -108,7 +109,7 @@ export default function DashboardLayout() {
                 <span className="font-medium text-gray-900 dark:text-gray-100">
                   Theme
                 </span>
-                <label className="relative inline-block w-12 h-6 cursor-pointer rounded-full bg-gradient-to-r from-gray-200 to-gray-800 bg-[length:200%_100%] bg-left transition-all duration-400 peer-checked:bg-right">
+                <label className="relative inline-block w-12 h-6 cursor-pointer rounded-full bg-gradient-to-r from-[var(--magenta)] to-[var(--violet)] bg-[length:200%_100%] bg-left transition-all duration-400 peer-checked:bg-right">
                   <input
                     type="checkbox"
                     className="peer absolute opacity-0 w-0 h-0"
@@ -116,7 +117,7 @@ export default function DashboardLayout() {
                     onChange={toggleTheme}
                   />
                   {/* The knob */}
-                  <span className="absolute top-1 left-1.5 w-4 h-4 rounded-full bg-gradient-to-r from-gray-200 to-gray-800 bg-[length:200%_100%] bg-right peer-checked:left-[calc(100%-1rem-0.375rem)] peer-checked:bg-left transition-all duration-400" />
+                  <span className="absolute top-1 left-1.5 w-4 h-4 rounded-full bg-gradient-to-r from-white to-gray-100 bg-[length:200%_100%] bg-right peer-checked:left-[calc(100%-1rem-0.375rem)] peer-checked:bg-left transition-all duration-400" />
                 </label>
               </div>
             </li>
