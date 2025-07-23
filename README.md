@@ -6,8 +6,8 @@ A feature-rich, user-authenticated task management application built with **Reac
 
 ## 🚀 Live Demo
 
-🔗 **Frontend:** [Live Link](https://your-frontend-link.vercel.app)  
-🔗 **Backend API:** [API Link](https://your-backend-api.onrender.com)
+🔗 **Frontend:** [Live Link](https://ticklist.onrender.com)  
+🔗 **Backend API:** [API Link](https://ticklist-server.onrender.com)
 
 ---
 
