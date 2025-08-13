@@ -120,7 +120,7 @@ export default function Sidebar() {
               onClick={() => setSidebarOpen(false)}
               className="flex bg-gray-200 items-center justify-between px-4 py-2 rounded dark:bg-gray-700 dark:text-white"
             >
-              <span>log</span>
+              <span>login</span>
               <LuLogOut />
             </NavLink>
           </div>
