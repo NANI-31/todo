@@ -10,7 +10,7 @@ import BouncingBlob from "../components/BouncingBlob2";
 import { createTask } from "../services/taskService";
 const CreateTask = () => {
   const navigate = useNavigate();
-  const { user } = UserData();
+  const { user, isTaskAdded } = UserData();
   const [formData, setFormData] = useState({
     title: "a",
     description: "a",

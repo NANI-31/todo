@@ -59,7 +59,7 @@ const DashboardPage = () => {
   };
 
   useEffect(() => {
-    if (tasks.length === 0 || isTaskAdded) {
+    if (tasks.length === 0 || taskAdded) {
       fetchTasks();
     }
   }, []);
