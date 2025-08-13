@@ -37,7 +37,7 @@ export default function Sidebar() {
             ✕
           </button>
         </div>
-        <nav className="p-4 flex flex-col justify-between h-[calc(100dvh-65px)]">
+        <nav className="p-4 flex flex-col justify-between h-[calc(100dvh-65px)] overflow-hidden">
           <ul className="space-y-2 flex-1 overflow-y-auto">
             <li>
               <NavLink
