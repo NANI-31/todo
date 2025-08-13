@@ -37,8 +37,8 @@ export default function Sidebar() {
             ✕
           </button>
         </div>
-        <nav className="p-4 flex flex-col justify-between h-[calc(100dvh-65px)] overflow-hidden">
-          <ul className="space-y-2 flex-1 overflow-y-auto">
+        <nav className="p-4 flex flex-col justify-between h-[calc(100dvh-65px)]">
+          <ul className="space-y-2 flex-1 overflow-y-auto ">
             <li>
               <NavLink
                 to="/todo/dashboard"
@@ -120,7 +120,7 @@ export default function Sidebar() {
               onClick={() => setSidebarOpen(false)}
               className="flex bg-gray-200 items-center justify-between px-4 py-2 rounded dark:bg-gray-700 dark:text-white"
             >
-              <span>Logout</span>
+              <span>log</span>
               <LuLogOut />
             </NavLink>
           </div>
