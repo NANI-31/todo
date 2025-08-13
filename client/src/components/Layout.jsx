@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { LuLogOut } from "react-icons/lu";
 import useTheme from "../hooks/useTheme";
 import { UserData } from "../hooks/useUser";
@@ -7,6 +7,7 @@ export default function DashboardLayout() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isDark, toggleTheme] = useTheme();
   const { user } = UserData();
+
   useEffect(() => {
     if (sidebarOpen) {
       document.body.style.overflow = "hidden";
@@ -14,6 +15,16 @@ export default function DashboardLayout() {
       document.body.style.overflow = "";
     }
   }, [sidebarOpen]);
+
+  const location = useLocation();
+
+  const pathTitles = {
+    "/todo/dashboard": "Home",
+    "/todo/create": "Create Task",
+    "/todo/profile": "Profile",
+  };
+
+  const pageTitle = pathTitles[location.pathname] || "Dashboard";
 
   return (
     <div className="flex h-screen bg-[#e0e0e0] dark:bg-[#010208]">
@@ -32,7 +43,7 @@ export default function DashboardLayout() {
               <img
                 src={user?.avatarUrl}
                 alt=""
-                className="w-full h-full object-fit"
+                className="w-full h-full object-cover"
               />
             </div>
             <h6 className="text-2xl dark:text-white">{user?.name}</h6>
@@ -49,8 +60,8 @@ export default function DashboardLayout() {
             ✕
           </button>
         </div>
-        <nav className="p-4 flex flex-col justify-between h-[calc(100dvh-110px)]">
-          <ul className="space-y-2 flex-1 overflow-y-auto">
+        <nav className="p-4 flex flex-col justify-between h-[calc(100dvh-110px)] ">
+          <ul className="space-y-2 flex-1 ">
             <li>
               <NavLink
                 to="/todo/dashboard"
@@ -159,7 +170,7 @@ export default function DashboardLayout() {
             ☰
           </button>
           <h1 className="text-lg font-semibold text-gray-900 dark:text-white">
-            Dashboard
+            {pageTitle}
           </h1>
           <div />
         </header>

@@ -5,6 +5,7 @@ const initialState = {
   user: null, // or an object with default fields like { id: '', name: '', email: '' }
   loading: false,
   error: null,
+  taskAdded: false,
 };
 
 const userSlice = createSlice({
@@ -19,6 +20,9 @@ const userSlice = createSlice({
     },
     addTask(state, action) {
       state.tasks.push(action.payload);
+    },
+    isTaskAdded(state, action) {
+      state.taskAdded = action.payload;
     },
     updateTask(state, action) {
       const index = state.tasks.findIndex(
@@ -54,6 +58,8 @@ export const {
   setUser,
   setTasks,
   addTask,
+  taskAdded,
+  isTaskAdded,
   updateTask,
   deleteTask,
   setLoading,

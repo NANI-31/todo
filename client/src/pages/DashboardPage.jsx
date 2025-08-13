@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import sampleTasks from "../utils/sampleTasks";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "../components/Button";
+import { useSelector } from "react-redux";
 import Select from "../components/Select";
 import { UserData } from "../hooks/useUser";
 import { MdDelete, MdModeEdit } from "react-icons/md";
@@ -16,7 +17,9 @@ import { toast } from "react-toastify";
 
 const DashboardPage = () => {
   const navigate = useNavigate();
-  const { setTasks, tasks, user, updateTask } = UserData();
+  const { setTasks, user, updateTask, tasks, taskAdded, isTaskAdded } =
+    UserData();
+  // const task = useSelector((state) => state.user.tasks);
   const [filterType, setFilterType] = useState("status");
   const userId = user._id;
   const [userTasks, setUserTasks] = useState([]);
@@ -46,6 +49,7 @@ const DashboardPage = () => {
       console.log(response.data);
       setUserTasks(response.data);
       setTasks(response.data);
+      isTaskAdded(false);
     } catch (err) {
       setError("Failed to load tasks. Please try again.");
       console.error(err);
@@ -55,10 +59,12 @@ const DashboardPage = () => {
   };
 
   useEffect(() => {
-    fetchTasks();
+    if (tasks.length === 0 || isTaskAdded) {
+      fetchTasks();
+    }
   }, []);
   const filterTasks = () => {
-    let filteredTasks = [...userTasks];
+    let filteredTasks = [...tasks];
 
     // Filter by status (completed/incomplete)
     if (filter === "completed") {
@@ -229,7 +235,7 @@ const DashboardPage = () => {
         <p className="text-gray-600 dark:text-gray-400">Loading tasks...</p>
       )}
       {error && <p className="text-red-600 font-medium">{error}</p>}
-      {!loading && userTasks.length === 0 && (
+      {!loading && tasks.length === 0 && (
         <p className="text-gray-600 dark:text-gray-400">No tasks found.</p>
       )}
 
