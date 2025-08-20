@@ -1,4 +1,4 @@
-# 📋 To-Do App – Full Stack (React + Node.js + MongoDB)
+# 📋 TickList – Full Stack (React + Node.js + MongoDB)
 
 A feature-rich, user-authenticated task management application built with **React**, **Node.js**, **Express**, and **MongoDB**. This project includes full CRUD functionality, JWT-based authentication, filtering/sorting, drag-and-drop, and more — ideal for showcasing full-stack development skills.
 
