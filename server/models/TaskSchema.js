@@ -14,7 +14,7 @@ const taskSchema = new mongoose.Schema(
     },
 
     category: { type: String }, // e.g., Work, Personal
-    tags: [String],
+    // tags: [{ type: String }],
 
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,

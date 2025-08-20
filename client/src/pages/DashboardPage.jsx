@@ -17,15 +17,17 @@ import { toast } from "react-toastify";
 
 const DashboardPage = () => {
   const navigate = useNavigate();
-  const { setTasks, user, updateTask, tasks, taskAdded, isTaskAdded } =
-    UserData();
+  const { setTasks, user, updateTask, taskAdded, isTaskAdded } = UserData();
+  const tasks = useSelector((state) => state.user.tasks);
+  // console.log("Tasks from Redux:", tasks);
   // const task = useSelector((state) => state.user.tasks);
   const [filterType, setFilterType] = useState("status");
   const userId = user._id;
-  const [userTasks, setUserTasks] = useState([]);
   const [filter, setFilter] = useState("all"); // all, completed, incomplete
   const [sortBy, setSortBy] = useState("dueDate"); // dueDate, priority
   const [priorityFilter, setPriorityFilter] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -39,17 +41,14 @@ const DashboardPage = () => {
     try {
       setLoading(true);
       setError(null);
-
-      // Make the API request to fetch tasks by userId
       const response = await api.get(`/api/tasks/${userId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
       console.log(response.data);
-      setUserTasks(response.data);
       setTasks(response.data);
-      isTaskAdded(false);
+      isTaskAdded();
     } catch (err) {
       setError("Failed to load tasks. Please try again.");
       console.error(err);
@@ -64,6 +63,11 @@ const DashboardPage = () => {
     }
   }, []);
   const filterTasks = () => {
+    console.log("task length", tasks.length);
+    if (!Array.isArray(tasks)) {
+      console.error("Tasks is not an array:", tasks);
+      return [];
+    }
     let filteredTasks = [...tasks];
 
     // Filter by status (completed/incomplete)
@@ -94,8 +98,17 @@ const DashboardPage = () => {
         ); // Sort by priority
       });
     }
+    // Filter by search query in title or description
+    if (searchQuery.trim() !== "") {
+      const query = searchQuery.toLowerCase();
+      filteredTasks = filteredTasks.filter(
+        (task) =>
+          task.title.toLowerCase().includes(query) ||
+          task.description.toLowerCase().includes(query)
+      );
+    }
 
-    console.log("Filtered Tasks before sorting:", filteredTasks);
+    // console.log("Filtered Tasks before sorting:", filteredTasks);
     return filteredTasks;
   };
   // Toggle task completion
@@ -113,15 +126,6 @@ const DashboardPage = () => {
       );
       // Refresh tasks after update
       updateTask(res.data.task);
-      // setUserTasks(tasks);
-      setUserTasks((prevTasks) =>
-        prevTasks.map((task) => {
-          if (task._id === taskId) {
-            return { ...task, isCompleted: !task.isCompleted };
-          }
-          return task;
-        })
-      );
       // fetchTasks();
     } catch (err) {
       alert("Error updating task status");
@@ -131,8 +135,10 @@ const DashboardPage = () => {
   // Delete task
   const handleConfirmDelete = async () => {
     try {
+      setIsModalOpen(false);
+      setTaskToDelete(null);
       const token = localStorage.getItem("token");
-      await axios.delete(
+      await api.delete(
         `/api/tasks/${taskToDelete}`
         // , {
         // headers: {
@@ -140,14 +146,11 @@ const DashboardPage = () => {
         // },
         // }
       );
-      toast.success("Task deleted successfully!");
       fetchTasks();
+      toast.success("Task deleted successfully!");
     } catch (err) {
       toast.error("Failed to delete task. Please try again.");
-      alert("Error deleting task");
-    } finally {
-      setIsModalOpen(false);
-      setTaskToDelete(null);
+      // alert("Error deleting task");
     }
   };
   const handleCloseModal = () => {
@@ -155,18 +158,27 @@ const DashboardPage = () => {
     setTaskToDelete(null);
   };
   return (
-    <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-white bg">
-      <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">
-        My{" "}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-700 to-blue-700">
-          Todos
-        </span>
-      </h1>
+    <div className="px-4 py-8 mx-auto bg-white max-w-screen sm:px-6 lg:px-8 bg ">
+      <div className="flex justify-between gap-5 border-0 max-md:flex-col md:items-center cs">
+        <h1 className="text-4xl font-extrabold text-gray-900 dark:text-white">
+          My{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-700 to-blue-700">
+            Tick Lists
+          </span>
+        </h1>
+        <input
+          type="text"
+          placeholder="Search tasks..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full p-2 border border-gray-300 rounded-md md:w-1/4 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:text-white dark:border-gray-600"
+        />
+      </div>
 
       {/* Filters */}
-      <div className="flex max-xs:flex-col xs:justify-between rounded bg-blue-800 px-2 sm:px-10 items-center gap-4 my-4 py-2 sm:py-4">
+      <div className="flex gap-4 px-2 py-2 my-4 bg-blue-800 rounded max-xs:flex-col sm:justify-between sm:px-10 sm:items-center sm:py-4">
         {/* Filter By Dropdown */}
-        <div className="flex gap-4 w-full max-xs:flex-col xs:items-baseline-last">
+        <div className="flex w-full gap-4 max-sm:flex-col sm:items-baseline-last">
           <Select
             id="filterType"
             label="Filter By"
@@ -212,7 +224,7 @@ const DashboardPage = () => {
             />
           )}
         </div>
-        <div className="xs:flex w-full justify-end">
+        <div className="justify-end w-full sm:flex">
           {/* Sorting Dropdown */}
           <Select
             id="sortBy"
@@ -234,18 +246,18 @@ const DashboardPage = () => {
       {loading && (
         <p className="text-gray-600 dark:text-gray-400">Loading tasks...</p>
       )}
-      {error && <p className="text-red-600 font-medium">{error}</p>}
-      {!loading && tasks.length === 0 && (
+      {error && <p className="font-medium text-red-600">{error}</p>}
+      {!loading && (tasks?.length === 0 || tasks.length === undefined) && (
         <p className="text-gray-600 dark:text-gray-400">No tasks found.</p>
       )}
 
       <ul className="space-y-6">
-        {filterTasks().map((task) => (
+        {filterTasks()?.map((task) => (
           <li
             key={task._id}
-            className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 transition hover:shadow-md dark:bg-gray-900 dark:border-gray-700 dark:text-white"
+            className="p-6 transition bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md dark:bg-gray-900 dark:border-gray-700 dark:text-white"
           >
-            <div className="flex flex-col sm:flex-row justify-between gap-4">
+            <div className="flex flex-col justify-between gap-4 sm:flex-row">
               {/* Task Info */}
               <div className="flex-1">
                 <h3
@@ -257,7 +269,7 @@ const DashboardPage = () => {
                 >
                   {task.title}
                 </h3>
-                <p className="text-sm text-gray-600 mb-1 dark:text-gray-400">
+                <p className="mb-1 text-sm text-gray-600 dark:text-gray-400">
                   {task.description}
                 </p>
                 <p className="text-xs text-gray-500 dark:text-gray-400">
@@ -283,7 +295,7 @@ const DashboardPage = () => {
               </div>
 
               {/* Actions */}
-              <div className="flex max-xs:flex-co gap-2 items-center">
+              <div className="flex items-center gap-2 max-xs:flex-co">
                 <Button
                   onClick={() => toggleComplete(task._id, task.isCompleted)}
                   className={`px-4 md:block hidden sm:w-40 rounded font-medium transition ${
@@ -294,7 +306,7 @@ const DashboardPage = () => {
                 >
                   {task.isCompleted ? "Mark Incomplete" : "Mark Complete"}
                 </Button>
-                <div className="max-md:block hidden">
+                <div className="hidden max-md:block">
                   <AnimatedCheckbox
                     taskId={task._id}
                     atask={task.isCompleted}

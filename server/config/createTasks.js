@@ -7,7 +7,7 @@ async function createSampleTasks() {
         title: "Finish project report",
         description: "Complete the final sections and review formatting.",
         isCompleted: false,
-        dueDate: new Date("2025-07-25"),
+        dueDate: new Date("2025-08-25"),
         priority: "High",
         category: "Work",
         tags: ["project", "report"],
@@ -21,7 +21,7 @@ async function createSampleTasks() {
       {
         title: "Grocery shopping",
         description: "Buy milk, eggs, and bread.",
-        dueDate: new Date("2025-07-22"),
+        dueDate: new Date("2025-08-22"),
         priority: "Low",
         category: "Personal",
         tags: ["shopping", "groceries"],
@@ -33,7 +33,7 @@ async function createSampleTasks() {
       {
         title: "Team meeting",
         description: "Discuss Q3 OKRs with team.",
-        dueDate: new Date("2025-07-23T14:00:00Z"),
+        dueDate: new Date("2025-08-23T14:00:00Z"),
         priority: "Medium",
         category: "Work",
         tags: ["meeting"],
@@ -46,7 +46,7 @@ async function createSampleTasks() {
       {
         title: "Doctor appointment",
         description: "Routine check-up at clinic.",
-        dueDate: new Date("2025-07-28T10:00:00Z"),
+        dueDate: new Date("2025-08-28T10:00:00Z"),
         priority: "Medium",
         category: "Personal",
         tags: ["health"],
@@ -58,7 +58,7 @@ async function createSampleTasks() {
       {
         title: "Read 20 pages of a book",
         description: "Continue reading 'Deep Work' by Cal Newport.",
-        dueDate: new Date("2025-07-21"),
+        dueDate: new Date("2025-08-21"),
         priority: "Low",
         category: "Personal Development",
         tags: ["reading", "habits"],

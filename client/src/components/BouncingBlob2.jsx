@@ -1,5 +1,9 @@
-import React, { useEffect, useRef } from "react";
-
+import React, { useEffect, useRef, useState } from "react";
+let x = 100;
+let y = 100;
+let dx = 2;
+let dy = 1.5;
+let angle = 0;
 const BouncingBlob = () => {
   const blobGroupRef = useRef(null);
   const blobPathRef = useRef(null);
@@ -9,17 +13,19 @@ const BouncingBlob = () => {
   const width = 960;
   const height = 540;
   const radius = 100;
-
+  let scale = 0.5;
+  const rotationSpeed = 1;
   useEffect(() => {
-    let x = 100;
-    let y = 100;
-    let dx = 2;
-    let dy = 1.5;
+    let animationFrameId;
+
     const blobPath = blobPathRef.current;
 
     const applyTransform = () => {
       if (blobGroupRef.current) {
-        blobGroupRef.current.setAttribute("transform", `translate(${x} ${y})`);
+        blobGroupRef.current.setAttribute(
+          "transform",
+          `translate(${x} ${y}) scale(${scale})`
+        );
       }
     };
 
@@ -38,27 +44,47 @@ const BouncingBlob = () => {
     const updatePosition = () => {
       x += dx;
       y += dy;
+      angle = (angle + rotationSpeed) % 360;
       let bounced = false;
 
-      if (x < radius || x > width - radius) {
+      if (x <= radius || x >= width - radius) {
         dx = -dx;
         x = Math.max(radius, Math.min(x, width - radius));
-        changeGradient();
+        // changeGradient();
         bounced = true;
       }
 
-      if (y < radius || y > height - radius) {
+      if (y <= radius || y >= height - radius) {
         dy = -dy;
         y = Math.max(radius, Math.min(y, height - radius));
-        changeGradient();
+        // changeGradient();
         bounced = true;
       }
-
+      if (bounced) changeGradient();
       applyTransform();
-      requestAnimationFrame(updatePosition);
+      animationFrameId = requestAnimationFrame(updatePosition);
     };
-
-    requestAnimationFrame(updatePosition);
+    applyTransform();
+    animationFrameId = requestAnimationFrame(updatePosition);
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 300) {
+        scale = 0.6;
+      } else if (width < 800) {
+        scale = 0.7;
+      } else if (width < 1000) {
+        scale = 0.8;
+      } else {
+        scale = 0.9;
+      }
+      // scale = scale + +`0.${width}`;
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      cancelAnimationFrame(animationFrameId);
+    };
   }, []);
 
   return (

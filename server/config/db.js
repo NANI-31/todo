@@ -7,7 +7,10 @@ const DB = process.env.MONGO_DB_URL;
 
 const connectDB = async () => {
   try {
-    mongoose.connect(DB);
+    mongoose.connect(DB, {
+      ssl: true,
+      tlsAllowInvalidCertificates: false,
+    });
     console.log("DATABASE connected");
     // const adminExists = await admin.findOne({ email: adminData.email });
     // if (!adminExists) {

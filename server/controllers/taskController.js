@@ -2,6 +2,7 @@ const User = require("../models/UserSchema");
 const Task = require("../models/TaskSchema");
 const mongoose = require("mongoose");
 exports.fetchTasks = async (req, res) => {
+  console.log("fetch tasks called");
   try {
     const { userId } = req.params;
     console.log(userId);
@@ -23,8 +24,9 @@ exports.fetchTasks = async (req, res) => {
     //   .populate("createdBy", "name email") // Optionally populate the creator data
     //   .populate("sharedWith", "name email"); // Optionally populate the shared with user data
     if (!tasks.length) {
-      return res.status(404).json({ message: "No tasks found for this user" });
+      return res.status(200).json({ message: "No tasks found for this user" });
     }
+    // console.log("tasks", tasks);
     return res.status(200).json(tasks);
   } catch (err) {
     console.error(err);
@@ -32,6 +34,7 @@ exports.fetchTasks = async (req, res) => {
   }
 };
 exports.deleteTask = async (req, res) => {
+  console.log("deletion task called");
   try {
     const { taskId } = req.params;
     if (!mongoose.Types.ObjectId.isValid(taskId)) {

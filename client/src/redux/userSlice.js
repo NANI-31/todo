@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   user: null, // or an object with default fields like { id: '', name: '', email: '' }
+  tasks: [],
   loading: false,
   error: null,
   taskAdded: false,
@@ -21,8 +22,8 @@ const userSlice = createSlice({
     addTask(state, action) {
       state.tasks.push(action.payload);
     },
-    isTaskAdded(state, action) {
-      state.taskAdded = action.payload;
+    isTaskAdded(state) {
+      state.taskAdded = !state.taskAdded;
     },
     updateTask(state, action) {
       const index = state.tasks.findIndex(

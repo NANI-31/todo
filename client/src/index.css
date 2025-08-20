@@ -141,24 +141,49 @@ stop {
     background-color: #e0e0e0;
 }
 
-.custom-scrollbar {
-    /* scrollbar-width: thin; */
-    /* scrollbar-color: #3b82f6 #f1f1f1; */
+/* ::-webkit-scrollbar {
+    width: 10px;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
-    width: 8px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background-color: #929292;
     border-radius: 10px;
 }
 
+::-webkit-scrollbar-track {
+    background: rgb(44, 44, 44);
+}
+
+::-webkit-scrollbar-track-piece {
+    background: rgb(44, 44, 44);
+}
+
+::-webkit-scrollbar-button {
+    background: rgb(44, 44, 44);
+} */
+
+.hide-scrollbar::-webkit-scrollbar {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    /* IE 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    cursor: pointer;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #a0aec0;
+    /* Tailwind's gray-400 */
+    border-radius: 8px;
+}
+
 .custom-scrollbar::-webkit-scrollbar-track {
-    /* background: transparent; */
-    background: #f1f1f1;
-    border-radius: 4px;
+    background: transparent;
 }
 
 .card {

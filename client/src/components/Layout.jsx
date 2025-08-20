@@ -176,7 +176,7 @@ export default function DashboardLayout() {
         </header>
 
         {/* Outlet for nested routes */}
-        <main className="overflow-y-auto custom-scrollbar">
+        <main className="overflow-y-auto">
           <Outlet />
         </main>
       </div>
